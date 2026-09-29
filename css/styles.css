@@ -285,6 +285,18 @@ object-position:50% 40%;
   );
 }
 
+.gallery-item{
+  opacity:0;
+  transform:translateY(35px);
+  transition:
+    opacity .7s ease,
+    transform .7s ease;
+}
+
+.gallery-item.is-visible{
+  opacity:1;
+  transform:translateY(0);
+}
 
 /* =========================
    TIENDA
