@@ -150,33 +150,6 @@ galleryItems.forEach((item, index) => {
   galleryObserver.observe(item);
 });
 </script>
-    <script>
-const form = document.getElementById("contactForm");
-
-if (form) {
-  form.addEventListener("submit", function(event) {
-    event.preventDefault();
-
-    const data = new FormData(form);
-
-    const subject = encodeURIComponent(
-      "Contacto web — " +
-      data.get("nombre") + " " +
-      data.get("apellidos")
-    );
-
-    const body = encodeURIComponent(
-      "Nombre: " + data.get("nombre") + "\n" +
-      "Apellidos: " + data.get("apellidos") + "\n" +
-      "Email: " + data.get("email") + "\n\n" +
-      data.get("mensaje")
-    );
-
-    window.location.href =
-      "mailto:laurablue.illustration@gmail.com?subject=" +
-      subject + "&body=" + body;
-  });
-}
-</script>
+    
 </body>
 </html>
