@@ -120,7 +120,7 @@ a{
   height:100%;
   display:block;
  object-fit:contain;
-  object-position:center center;
+object-position:50% 30%;
 }
 
 .hero-placeholder{
