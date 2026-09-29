@@ -79,16 +79,16 @@ a{
   display:flex;
   align-items:center;
   justify-content:center;
-  width:180px;
-  height:70px;
+  width:230px;
+  height:90px;
 }
 
 
 .brand img{
   display:block;
-  width:195px;
+  width:220px;
   height:auto;
-  max-height:85px;
+  max-height:80px;
   object-fit:contain;
 }
 
