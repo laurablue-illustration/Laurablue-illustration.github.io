@@ -177,7 +177,7 @@ object-position:50% 40%;
 ========================= */
 
 .gallery{
-  width:min(990px,88vw);
+  width:min(1100px,88vw);
   margin:0 auto;
   padding-bottom:100px;
 
