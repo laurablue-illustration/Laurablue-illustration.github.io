@@ -74,6 +74,25 @@ a{
   opacity:.55;
 }
 
+
+.brand{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:180px;
+  height:70px;
+}
+
+
+.brand img{
+  display:block;
+  width:165px;
+  height:auto;
+  max-height:55px;
+  object-fit:contain;
+}
+
+
 .login{
   justify-self:end;
   font-size:15px;
@@ -658,15 +677,16 @@ footer{
   }
 
 
- .brand{
-  width:145px;
-  height:55px;
-}
+  .brand{
+    width:145px;
+    height:55px;
+  }
 
-.brand img{
-  width:125px;
-  max-height:45px;
-}
+
+  .brand img{
+    width:125px;
+    max-height:45px;
+  }
 
 
   .login{
@@ -768,4 +788,3 @@ footer{
   }
 
 }
-
