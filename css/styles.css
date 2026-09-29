@@ -76,13 +76,17 @@ a{
 
 
 .brand{
-  font-family:"Italianno",cursive;
-  font-size:47px;
-  line-height:1;
-  color:var(--olive);
+  display:flex;
+  align-items:center;
+  justify-content:center;
   transform:translateY(-2px);
 }
 
+.brand img{
+  width:180px;
+  height:auto;
+  display:block;
+}
 
 .login{
   justify-self:end;
