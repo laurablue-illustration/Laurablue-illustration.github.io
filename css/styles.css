@@ -75,21 +75,16 @@ a{
 }
 
 
-.brand{
-  display:flex;
+.topbar{
+  height:105px;
+  display:grid;
+  grid-template-columns:1fr auto 1fr;
   align-items:center;
-  justify-content:center;
-  width:180px;
-  height:70px;
-  transform:translateY(-2px);
-}
-
-.brand img{
-  display:block;
-  width:150px;
-  height:auto;
-  max-height:55px;
-  object-fit:contain;
+  padding:0 clamp(28px,7.6vw,150px);
+  position:sticky;
+  top:0;
+  z-index:20;
+  background:rgba(253,251,234,.97);
 }
 
 .login{
