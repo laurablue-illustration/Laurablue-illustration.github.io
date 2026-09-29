@@ -406,6 +406,36 @@ categoryLinks.forEach(link => {
 
 showCategory('ilustracion');
 </script>
+ <script>
+const galleryItems = document.querySelectorAll('.gallery-item');
+
+const galleryObserver = new IntersectionObserver((entries) => {
+
+  entries.forEach((entry) => {
+
+    if (entry.isIntersecting) {
+
+      entry.target.classList.add('is-visible');
+
+      galleryObserver.unobserve(entry.target);
+
+    }
+
+  });
+
+}, {
+  threshold:0.12
+});
+
+
+galleryItems.forEach((item, index) => {
+
+  item.style.transitionDelay = `${index * 0.08}s`;
+
+  galleryObserver.observe(item);
+
+});
+</script>
   
 </body>
 </html>
