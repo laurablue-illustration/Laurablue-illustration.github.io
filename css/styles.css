@@ -246,3 +246,14 @@ footer{
     width: 100%;
   }
 }
+.contact-form input:-webkit-autofill,
+.contact-form input:-webkit-autofill:hover,
+.contact-form input:-webkit-autofill:focus,
+.contact-form input:-webkit-autofill:active {
+  -webkit-text-fill-color: #788128 !important;
+  -webkit-box-shadow: 0 0 0 1000px #f7d7ca inset !important;
+  box-shadow: 0 0 0 1000px #f7d7ca inset !important;
+  background-color: #f7d7ca !important;
+  color: #788128 !important;
+  caret-color: #788128 !important;
+}
