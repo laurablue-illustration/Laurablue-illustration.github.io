@@ -93,11 +93,6 @@ a{
 }
 
 
-.login{
-  justify-self:end;
-  font-size:15px;
-}
-
 
 /* =========================
    PORTFOLIO
@@ -167,7 +162,7 @@ object-position:50% 40%;
 
 
 .category-nav a{
-  font-size:17px;
+  font-size:24px;
   font-weight:700;
 }
 
