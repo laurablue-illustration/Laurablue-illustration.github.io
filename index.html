@@ -80,13 +80,46 @@
     </section>
 
     <section id="contacto" class="contact-page">
-      <div>
-        <p class="eyebrow">CONTACTO</p>
-        <h1>¿Hacemos algo<br><em>juntas?</em></h1>
-        <a class="email" href="mailto:laurablue.illustration@gmail.com">laurablue.illustration@gmail.com</a>
+  <div class="contact-inner">
+
+    <div class="contact-illustration">
+      <img src="images/contact-illustration-reference.png"
+           alt="Ilustración de Laurablue">
+    </div>
+
+    <form class="contact-form" id="contactForm">
+
+      <div class="field-row">
+        <label>
+          Nombre <span>*</span>
+          <input type="text" name="nombre" required>
+        </label>
+
+        <label>
+          Apellidos <span>*</span>
+          <input type="text" name="apellidos" required>
+        </label>
       </div>
-    </section>
-  </main>
+
+      <label>
+        Email <span>*</span>
+        <input type="email" name="email" required>
+      </label>
+
+      <label>
+        Mensaje <span>*</span>
+        <textarea name="mensaje" required></textarea>
+      </label>
+
+      <button type="submit">Enviar</button>
+
+      <p class="form-note" id="formNote">
+        Al pulsar Enviar se abrirá tu aplicación de correo.
+      </p>
+
+    </form>
+  </div>
+</section>
 
   <footer>
     <span>©2026 Laurablue</span>
@@ -98,5 +131,33 @@
   </footer>
 
   <script src="js/script.js"></script>
+    <script>
+const form = document.getElementById("contactForm");
+
+if (form) {
+  form.addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    const data = new FormData(form);
+
+    const subject = encodeURIComponent(
+      "Contacto web — " +
+      data.get("nombre") + " " +
+      data.get("apellidos")
+    );
+
+    const body = encodeURIComponent(
+      "Nombre: " + data.get("nombre") + "\n" +
+      "Apellidos: " + data.get("apellidos") + "\n" +
+      "Email: " + data.get("email") + "\n\n" +
+      data.get("mensaje")
+    );
+
+    window.location.href =
+      "mailto:laurablue.illustration@gmail.com?subject=" +
+      subject + "&body=" + body;
+  });
+}
+</script>
 </body>
 </html>
