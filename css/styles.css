@@ -1,4 +1,7 @@
-*{box-sizing:border-box}
+*{
+  box-sizing:border-box;
+}
+
 
 :root{
   --cream:#fdfbea;
@@ -9,9 +12,11 @@
   --white:#fff;
 }
 
+
 html{
   scroll-behavior:smooth;
 }
+
 
 body{
   margin:0;
@@ -21,10 +26,16 @@ body{
   font-size:16px;
 }
 
+
 a{
   color:inherit;
   text-decoration:none;
 }
+
+
+/* =========================
+   CABECERA
+========================= */
 
 .topbar{
   height:105px;
@@ -38,11 +49,13 @@ a{
   background:rgba(253,251,234,.97);
 }
 
+
 .main-nav{
   display:flex;
   gap:44px;
   align-items:center;
 }
+
 
 .main-nav a{
   font-size:16px;
@@ -51,13 +64,16 @@ a{
   transition:opacity .2s;
 }
 
+
 .main-nav a.active{
   color:var(--pink);
 }
 
+
 .main-nav a:hover{
   opacity:.55;
 }
+
 
 .brand{
   font-family:"Italianno",cursive;
@@ -67,15 +83,22 @@ a{
   transform:translateY(-2px);
 }
 
+
 .login{
   justify-self:end;
   font-size:15px;
 }
 
+
+/* =========================
+   PORTFOLIO
+========================= */
+
 .portfolio-page{
   max-width:1600px;
   margin:0 auto;
 }
+
 
 .hero-art{
   height:min(43vw,640px);
@@ -83,16 +106,23 @@ a{
   overflow:hidden;
 }
 
+
 .hero-placeholder{
   height:100%;
   display:flex;
   flex-direction:column;
   align-items:center;
   justify-content:center;
-  background:linear-gradient(120deg,#f1d45d 0%,#f8c7a9 48%,#bd8a3b 100%);
+  background:linear-gradient(
+    120deg,
+    #f1d45d 0%,
+    #f8c7a9 48%,
+    #bd8a3b 100%
+  );
   color:#fff9d9;
   text-align:center;
 }
+
 
 .hero-placeholder span{
   font-size:18px;
@@ -100,11 +130,17 @@ a{
   letter-spacing:.18em;
 }
 
+
 .hero-placeholder small{
   margin-top:12px;
   font-size:13px;
   letter-spacing:.04em;
 }
+
+
+/* =========================
+   CATEGORÍAS
+========================= */
 
 .category-nav{
   display:flex;
@@ -113,72 +149,138 @@ a{
   padding:43px 20px 39px;
 }
 
+
 .category-nav a{
   font-size:17px;
   font-weight:700;
 }
 
+
 .category-nav a:hover{
   text-decoration:underline;
 }
 
+
+/* =========================
+   GALERÍA
+========================= */
+
 .gallery{
-  width:min(1200px,92vw);
+  width:min(990px,88vw);
   margin:0 auto;
   padding-bottom:100px;
+
   display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:18px;
+  grid-template-columns:1fr 1fr;
+  grid-auto-rows:auto;
+  gap:14px;
 }
+
 
 .gallery-item{
   display:block;
   overflow:hidden;
-  aspect-ratio:1 / 1;
 }
+
+
+.item-large{
+  grid-row:span 2;
+}
+
+
+.wide-item{
+  grid-column:1 / 2;
+}
+
+
+.small-item{
+  grid-column:2 / 3;
+}
+
 
 .art-placeholder{
   min-height:310px;
   width:100%;
+
   display:flex;
   align-items:center;
   justify-content:center;
+
   color:rgba(65,65,30,.55);
   font-weight:700;
   letter-spacing:.12em;
-  transition:transform .3s ease,filter .3s ease;
+
+  transition:
+    transform .3s ease,
+    filter .3s ease;
 }
+
 
 .art-placeholder:hover{
   transform:scale(1.015);
   filter:saturate(1.08);
 }
 
+
 .item-large .art-placeholder{
   min-height:560px;
 }
 
+
 .yellow{
-  background:linear-gradient(145deg,#ead151,#f4e68d);
+  background:linear-gradient(
+    145deg,
+    #ead151,
+    #f4e68d
+  );
 }
+
 
 .landscape{
-  background:linear-gradient(165deg,#f5d4aa 0 35%,#a99a69 36% 62%,#4f5134 63%);
+  background:linear-gradient(
+    165deg,
+    #f5d4aa 0 35%,
+    #a99a69 36% 62%,
+    #4f5134 63%
+  );
 }
 
+
 .tree{
-  background:linear-gradient(150deg,#d9e0bf,#a5b29a 55%,#7d8d6a);
+  background:linear-gradient(
+    150deg,
+    #d9e0bf,
+    #a5b29a 55%,
+    #7d8d6a
+  );
 }
+
 
 .poster{
   min-height:250px;
-  background:linear-gradient(90deg,#faf7ef,#e8ddd0);
+
+  background:linear-gradient(
+    90deg,
+    #faf7ef,
+    #e8ddd0
+  );
 }
+
 
 .book{
   min-height:250px;
-  background:linear-gradient(145deg,#233321,#a89158);
+
+  background:linear-gradient(
+    145deg,
+    #233321,
+    #a89158
+  );
 }
+
+
+/* =========================
+   TIENDA
+========================= */
 
 .simple-page,
 .about-page,
@@ -186,14 +288,17 @@ a{
   border-top:1px solid rgba(112,124,40,.18);
 }
 
+
 .simple-page{
   padding:150px 10vw 180px;
 }
+
 
 .page-inner{
   max-width:850px;
   margin:auto;
 }
+
 
 .eyebrow{
   font-size:14px;
@@ -202,6 +307,7 @@ a{
   margin:0 0 28px;
 }
 
+
 h1{
   font-size:clamp(48px,6vw,88px);
   line-height:.98;
@@ -209,16 +315,19 @@ h1{
   letter-spacing:-.035em;
 }
 
+
 h1 em{
   font-family:Georgia,serif;
   font-weight:400;
 }
+
 
 .simple-page p:not(.eyebrow){
   max-width:570px;
   font-size:18px;
   line-height:1.65;
 }
+
 
 .text-link{
   display:inline-block;
@@ -227,24 +336,33 @@ h1 em{
   font-size:14px;
 }
 
+
+/* =========================
+   SOBRE MÍ
+========================= */
+
 .about-page{
   padding:110px 6vw 80px;
 }
 
+
 .about-inner{
   width:min(1100px,100%);
   margin:auto;
+
   display:grid;
   grid-template-columns:1fr 420px;
   gap:100px;
   align-items:start;
 }
 
+
 .about-copy{
   padding-top:15px;
   font-size:18px;
   line-height:1.48;
 }
+
 
 .about-copy h1{
   color:var(--pink);
@@ -253,29 +371,41 @@ h1 em{
   margin:0 0 10px;
 }
 
+
 .about-copy h1 span{
   font-family:Arial,sans-serif;
   font-size:42px;
 }
 
+
 .about-copy p{
   margin:0 0 28px;
 }
+
 
 .portrait-placeholder{
   width:390px;
   max-width:100%;
   aspect-ratio:1;
+
   border-radius:50%;
-  background:linear-gradient(135deg,#c8d2b2,#8a9a6c);
+
+  background:linear-gradient(
+    135deg,
+    #c8d2b2,
+    #8a9a6c
+  );
+
   display:flex;
   flex-direction:column;
   align-items:center;
   justify-content:center;
+
   color:#fffdf0;
   font-weight:700;
   letter-spacing:.12em;
 }
+
 
 .portrait-placeholder small{
   margin-top:8px;
@@ -283,45 +413,64 @@ h1 em{
   letter-spacing:0;
 }
 
+
+/* =========================
+   CONTACTO
+========================= */
+
 .contact-page{
   min-height:620px;
+
   display:flex;
   align-items:center;
   justify-content:center;
+
   padding:80px 7vw;
+
   text-align:left;
 }
+
 
 .contact-page h1{
   color:var(--pink);
 }
 
+
 .contact-inner{
   width:min(1180px,100%);
+
   display:grid;
   grid-template-columns:42% 58%;
+
   align-items:center;
+
   gap:35px;
 }
+
 
 .contact-illustration{
   display:flex;
   align-items:center;
   justify-content:center;
+
   min-height:390px;
 }
+
 
 .contact-illustration img{
   width:min(100%,520px);
   height:auto;
   display:block;
+
   mix-blend-mode:multiply;
 }
+
 
 .contact-form{
   width:100%;
   max-width:675px;
 }
+
 
 .field-row{
   display:grid;
@@ -329,43 +478,59 @@ h1 em{
   gap:10px;
 }
 
+
 .contact-form label{
   display:block;
   font-size:16px;
   margin:0 0 24px;
 }
 
+
 .contact-form label span{
   color:#f19b8c;
 }
 
+
 .contact-form input,
 .contact-form textarea{
   display:block;
+
   width:100%;
+
   margin-top:8px;
+
   border:0;
   border-bottom:1px solid #788128;
   border-radius:8px;
+
   background:#f7d7ca;
+
   color:#788128 !important;
   -webkit-text-fill-color:#788128 !important;
+
   caret-color:#788128;
+
   font:inherit;
+
   outline:none;
 }
+
 
 .contact-form input{
   height:39px;
   padding:6px 12px;
 }
 
+
 .contact-form textarea{
   height:105px;
   padding:12px;
+
   resize:vertical;
+
   min-height:105px;
 }
+
 
 .contact-form input::placeholder,
 .contact-form textarea::placeholder{
@@ -373,56 +538,60 @@ h1 em{
   opacity:1;
 }
 
+
 .contact-form input:focus,
 .contact-form textarea:focus{
   box-shadow:0 0 0 2px rgba(120,129,40,.22);
 }
 
-/* Autocompletado de Chrome */
+
+/* =========================
+   AUTOCOMPLETADO CHROME
+========================= */
+
 .contact-form input:-webkit-autofill,
 .contact-form input:-webkit-autofill:hover,
 .contact-form input:-webkit-autofill:focus,
-.contact-form input:-webkit-autofill:active {
-  -webkit-text-fill-color: #788128 !important;
-  -webkit-box-shadow: 0 0 0 1000px #f7d7ca inset !important;
-  box-shadow: 0 0 0 1000px #f7d7ca inset !important;
-  background-color: #f7d7ca !important;
-  color: #788128 !important;
-  caret-color: #788128 !important;
+.contact-form input:-webkit-autofill:active{
+
+  -webkit-text-fill-color:#788128 !important;
+
+  -webkit-box-shadow:
+    0 0 0 1000px #f7d7ca inset !important;
+
+  box-shadow:
+    0 0 0 1000px #f7d7ca inset !important;
+
+  background-color:#f7d7ca !important;
+
+  color:#788128 !important;
+
+  caret-color:#788128 !important;
 }
 
-.contact-form input {
-  height: 39px;
-  padding: 6px 12px;
-}
-
-.contact-form textarea {
-  height: 105px;
-  padding: 12px;
-  resize: vertical;
-  min-height: 105px;
-}
-
-.contact-form input:focus,
-.contact-form textarea:focus {
-  box-shadow: 0 0 0 2px rgba(120,129,40,.22);
-}
 
 .contact-form button{
   width:55%;
   height:36px;
+
   border:2px solid #788128;
   border-radius:9px;
+
   background:transparent;
+
   color:#788128;
+
   font:700 14px "DM Sans",sans-serif;
+
   cursor:pointer;
 }
+
 
 .contact-form button:hover{
   background:#788128;
   color:#fdfbea;
 }
+
 
 .form-note{
   font-size:12px;
@@ -430,75 +599,107 @@ h1 em{
   margin-top:10px;
 }
 
+
+/* =========================
+   FOOTER
+========================= */
+
 footer{
   border-top:1px solid rgba(112,124,40,.35);
+
   width:90%;
   margin:auto;
+
   padding:48px 0 58px;
+
   display:flex;
   justify-content:space-between;
   align-items:center;
+
   font-size:14px;
 }
+
 
 .socials{
   display:flex;
   gap:12px;
 }
 
+
 .socials a{
   width:29px;
   height:29px;
+
   border-radius:50%;
+
   background:#111;
   color:#fff;
+
   display:grid;
   place-items:center;
+
   font-size:11px;
   font-weight:700;
 }
+
+
+/* =========================
+   TABLET / MÓVIL
+========================= */
 
 @media(max-width:800px){
 
   .topbar{
     height:82px;
+
     padding:0 20px;
+
     grid-template-columns:1fr auto;
   }
 
+
   .main-nav{
     gap:14px;
+
     grid-column:1/-1;
     grid-row:2;
+
     display:none;
   }
+
 
   .brand{
     font-size:39px;
   }
 
+
   .login{
     display:none;
   }
+
 
   .hero-art{
     height:58vw;
     min-height:280px;
   }
 
+
   .category-nav{
     gap:25px;
     padding:28px 12px;
   }
 
+
   .category-nav a{
     font-size:13px;
   }
+
 
   .gallery{
     grid-template-columns:1fr;
     gap:10px;
   }
+
 
   .item-large,
   .wide-item,
@@ -507,29 +708,40 @@ footer{
     grid-row:auto;
   }
 
+
   .item-large .art-placeholder,
   .art-placeholder{
     min-height:320px;
   }
+
 
   .about-inner{
     grid-template-columns:1fr;
     gap:50px;
   }
 
+
   .portrait-placeholder{
     margin:auto;
   }
+
 
   .simple-page{
     padding:100px 7vw;
   }
 
+
   footer{
     width:88%;
     padding:30px 0;
   }
+
 }
+
+
+/* =========================
+   CONTACTO EN MÓVIL
+========================= */
 
 @media(max-width:760px){
 
@@ -538,21 +750,26 @@ footer{
     gap:15px;
   }
 
+
   .contact-illustration{
     min-height:260px;
   }
 
+
   .contact-illustration img{
     max-width:410px;
   }
+
 
   .field-row{
     grid-template-columns:1fr;
     gap:0;
   }
 
+
   .contact-form button{
     width:100%;
   }
+
 }
 
