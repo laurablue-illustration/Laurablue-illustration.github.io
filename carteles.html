@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Laurablue — Carteles</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Italianno&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/styles.css">
+
+  <style>
+    .project-page{
+      max-width:1200px;
+      margin:0 auto;
+      padding:70px 30px 120px;
+    }
+
+    .project-header{
+      text-align:center;
+      margin-bottom:60px;
+    }
+
+    .project-header h1{
+      font-size:clamp(45px,6vw,80px);
+      margin:0 0 15px;
+    }
+
+    .project-header p{
+      margin:0;
+      font-size:16px;
+    }
+
+    .back-link{
+      display:inline-block;
+      margin-bottom:50px;
+      font-size:14px;
+      font-weight:700;
+    }
+
+    .back-link:hover{
+      text-decoration:underline;
+    }
+
+    .project-gallery{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:18px;
+    }
+
+    .project-gallery img{
+      width:100%;
+      height:auto;
+      display:block;
+    }
+
+    .project-gallery .large{
+      grid-column:1 / -1;
+    }
+
+    @media(max-width:800px){
+      .project-page{
+        padding:40px 20px 80px;
+      }
+
+      .project-gallery{
+        grid-template-columns:1fr;
+        gap:12px;
+      }
+
+      .project-gallery .large{
+        grid-column:auto;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="topbar">
+
+    <nav class="main-nav" aria-label="Navegación principal">
+      <a class="active" href="index.html#portfolio">PORTFOLIO</a>
+      <a href="index.html#tienda">TIENDA</a>
+      <a href="index.html#sobre-mi">SOBRE MÍ</a>
+      <a href="index.html#contacto">CONTACTO</a>
+    </nav>
+
+    <a class="brand" href="index.html#portfolio" aria-label="Laurablue">
+      <img src="images/logo-laurablue.png" alt="Laurablue">
+    </a>
+
+    <span class="login">Iniciar sesión</span>
+
+  </header>
+
+
+  <main class="project-page">
+
+    <a class="back-link" href="index.html#portfolio">← VOLVER AL PORTFOLIO</a>
+
+    <header class="project-header">
+      <h1>Carteles</h1>
+      <p>Una selección de mis carteles y proyectos gráficos.</p>
+    </header>
+
+
+    <section class="project-gallery">
+
+      <img class="large" src="images/cartel-01.jpg" alt="Cartel de Laurablue">
+
+      <img src="images/cartel-02.jpg" alt="Cartel de Laurablue">
+
+      <img src="images/cartel-03.jpg" alt="Cartel de Laurablue">
+
+      <img src="images/cartel-04.jpg" alt="Cartel de Laurablue">
+
+      <img src="images/cartel-05.jpg" alt="Cartel de Laurablue">
+
+      <img class="large" src="images/cartel-06.jpg" alt="Cartel de Laurablue">
+
+    </section>
+
+  </main>
+
+
+  <footer>
+    <span>©2026 Laurablue</span>
+
+    <div class="socials">
+      <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram">◎</a>
+      <a href="#" aria-label="Behance">Bē</a>
+      <a href="#" aria-label="Bluesky">✦</a>
+    </div>
+  </footer>
+
+</body>
+</html>
