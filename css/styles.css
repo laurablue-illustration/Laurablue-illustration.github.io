@@ -107,3 +107,131 @@ footer{
   .simple-page{padding:100px 7vw}
   footer{width:88%;padding:30px 0}
 }
+.contact-page {
+  min-height: 620px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 7vw;
+  text-align: left;
+}
+
+.contact-inner {
+  width: min(1180px, 100%);
+  display: grid;
+  grid-template-columns: 42% 58%;
+  align-items: center;
+  gap: 35px;
+}
+
+.contact-illustration {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 390px;
+}
+
+.contact-illustration img {
+  width: min(100%, 520px);
+  height: auto;
+  display: block;
+  mix-blend-mode: multiply;
+}
+
+.contact-form {
+  width: 100%;
+  max-width: 675px;
+}
+
+.field-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.contact-form label {
+  display: block;
+  font-size: 16px;
+  margin: 0 0 24px;
+}
+
+.contact-form label span {
+  color: #f19b8c;
+}
+
+.contact-form input,
+.contact-form textarea {
+  display: block;
+  width: 100%;
+  margin-top: 8px;
+  border: 0;
+  border-bottom: 1px solid #788128;
+  border-radius: 8px;
+  background: #f7d7ca;
+  color: #788128;
+  font: inherit;
+  outline: none;
+}
+
+.contact-form input {
+  height: 39px;
+  padding: 6px 12px;
+}
+
+.contact-form textarea {
+  height: 105px;
+  padding: 12px;
+  resize: vertical;
+  min-height: 105px;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  box-shadow: 0 0 0 2px rgba(120,129,40,.22);
+}
+
+.contact-form button {
+  width: 55%;
+  height: 36px;
+  border: 2px solid #788128;
+  border-radius: 9px;
+  background: transparent;
+  color: #788128;
+  font: 700 14px "DM Sans", sans-serif;
+  cursor: pointer;
+}
+
+.contact-form button:hover {
+  background: #788128;
+  color: #fdfbea;
+}
+
+.form-note {
+  font-size: 12px;
+  opacity: .7;
+  margin-top: 10px;
+}
+
+@media (max-width: 760px) {
+  .contact-inner {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .contact-illustration {
+    min-height: 260px;
+  }
+
+  .contact-illustration img {
+    max-width: 410px;
+  }
+
+  .field-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .contact-form button {
+    width: 100%;
+  }
+}
