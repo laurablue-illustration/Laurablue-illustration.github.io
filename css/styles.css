@@ -160,10 +160,20 @@ footer{
 }
 
 .contact-form input,
+.contact-form input,
 .contact-form textarea {
+  display: block;
+  width: 100%;
+  margin-top: 8px;
+  border: 0;
+  border-bottom: 1px solid #788128;
+  border-radius: 8px;
+  background: #f7d7ca;
   color: #788128 !important;
   -webkit-text-fill-color: #788128 !important;
   caret-color: #788128;
+  font: inherit;
+  outline: none;
 }
 
 .contact-form input::placeholder,
@@ -172,17 +182,17 @@ footer{
   opacity: 1;
 }
 
-/* Evita que Chrome cambie el aspecto de los campos al autocompletar */
 .contact-form input:-webkit-autofill,
 .contact-form input:-webkit-autofill:hover,
 .contact-form input:-webkit-autofill:focus,
-.contact-form textarea:-webkit-autofill,
-.contact-form textarea:-webkit-autofill:hover,
-.contact-form textarea:-webkit-autofill:focus {
+.contact-form input:-webkit-autofill:active {
   -webkit-text-fill-color: #788128 !important;
   -webkit-box-shadow: 0 0 0 1000px #f7d7ca inset !important;
   box-shadow: 0 0 0 1000px #f7d7ca inset !important;
-  caret-color: #788128;
+  background-color: #f7d7ca !important;
+  color: #788128 !important;
+  caret-color: #788128 !important;
+}
 
 .contact-form input {
   height: 39px;
