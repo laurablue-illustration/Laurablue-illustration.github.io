@@ -47,48 +47,72 @@
       </div>
 
 
-      <nav class="category-nav" aria-label="Categorías del portfolio">
-  <a href="ilustracion.html">ILUSTRACIÓN</a>
-  <a href="editorial.html">EDITORIAL</a>
-  <a href="carteles.html">CARTELES</a>
+     <nav class="category-nav" aria-label="Categorías del portfolio">
+  <a href="#" class="category-link active" data-category="ilustracion">ILUSTRACIÓN</a>
+  <a href="#" class="category-link" data-category="editorial">EDITORIAL</a>
+  <a href="#" class="category-link" data-category="carteles">CARTELES</a>
 </nav>
 
 
-      <section class="gallery" aria-label="Galería">
+<section class="gallery" id="portfolio-gallery" aria-label="Galería">
 
-        <a id="ilustracion" class="gallery-item item-large" href="#ilustracion">
-          <div class="art-placeholder yellow">
-            <span>ILUSTRACIÓN</span>
-          </div>
-        </a>
+  <!-- ILUSTRACIÓN -->
 
-        <a id="editorial" class="gallery-item" href="#editorial">
-          <div class="art-placeholder landscape">
-            <span>EDITORIAL</span>
-          </div>
-        </a>
+  <a class="gallery-item item-large category-ilustracion" href="#">
+    <img src="images/ilustracion-01.jpg" alt="Ilustración de Laurablue">
+  </a>
 
-        <a class="gallery-item" href="#editorial">
-          <div class="art-placeholder tree">
-            <span>EDITORIAL</span>
-          </div>
-        </a>
+  <a class="gallery-item category-ilustracion" href="#">
+    <img src="images/ilustracion-02.jpg" alt="Ilustración de Laurablue">
+  </a>
 
-        <a id="carteles" class="gallery-item wide-item" href="#carteles">
-          <div class="art-placeholder poster">
-            <span>CARTELES</span>
-          </div>
-        </a>
+  <a class="gallery-item category-ilustracion" href="#">
+    <img src="images/ilustracion-03.jpg" alt="Ilustración de Laurablue">
+  </a>
 
-        <a class="gallery-item small-item" href="#carteles">
-          <div class="art-placeholder book">
-            <span>CARTELES</span>
-          </div>
-        </a>
+  <a class="gallery-item category-ilustracion" href="#">
+    <img src="images/ilustracion-04.jpg" alt="Ilustración de Laurablue">
+  </a>
 
-      </section>
 
-    </section>
+  <!-- EDITORIAL -->
+
+  <a class="gallery-item item-large category-editorial" href="#">
+    <img src="images/editorial-01.jpg" alt="Proyecto editorial de Laurablue">
+  </a>
+
+  <a class="gallery-item category-editorial" href="#">
+    <img src="images/editorial-02.jpg" alt="Proyecto editorial de Laurablue">
+  </a>
+
+  <a class="gallery-item category-editorial" href="#">
+    <img src="images/editorial-03.jpg" alt="Proyecto editorial de Laurablue">
+  </a>
+
+  <a class="gallery-item category-editorial" href="#">
+    <img src="images/editorial-04.jpg" alt="Proyecto editorial de Laurablue">
+  </a>
+
+
+  <!-- CARTELES -->
+
+  <a class="gallery-item item-large category-carteles" href="#">
+    <img src="images/cartel-01.jpg" alt="Cartel de Laurablue">
+  </a>
+
+  <a class="gallery-item category-carteles" href="#">
+    <img src="images/cartel-02.jpg" alt="Cartel de Laurablue">
+  </a>
+
+  <a class="gallery-item category-carteles" href="#">
+    <img src="images/cartel-03.jpg" alt="Cartel de Laurablue">
+  </a>
+
+  <a class="gallery-item category-carteles" href="#">
+    <img src="images/cartel-04.jpg" alt="Cartel de Laurablue">
+  </a>
+
+</section>
 
 
     <!-- TIENDA -->
@@ -323,5 +347,47 @@
 
   </script>
 
+<script>
+const categoryLinks = document.querySelectorAll('.category-link');
+const galleryItems = document.querySelectorAll('.gallery-item');
+
+function showCategory(category) {
+
+  galleryItems.forEach(item => {
+    if (item.classList.contains('category-' + category)) {
+      item.style.display = 'block';
+    } else {
+      item.style.display = 'none';
+    }
+  });
+
+  categoryLinks.forEach(link => {
+    link.classList.remove('active');
+  });
+
+  document
+    .querySelector('[data-category="' + category + '"]')
+    .classList.add('active');
+}
+
+
+categoryLinks.forEach(link => {
+
+  link.addEventListener('click', function(event) {
+
+    event.preventDefault();
+
+    const category = this.dataset.category;
+
+    showCategory(category);
+
+  });
+
+});
+
+
+showCategory('ilustracion');
+</script>
+  
 </body>
 </html>
