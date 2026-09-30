@@ -400,33 +400,36 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 
-  <!-- VENTANA PARA VER LA IMAGEN GRANDE -->
+<!-- VISOR DE IMÁGENES -->
 
-<div class="lightbox" id="lightbox">
+<div class="image-viewer" id="imageViewer">
 
-  <button class="lightbox-close" aria-label="Cerrar">
+  <button
+    class="image-viewer-close"
+    id="imageViewerClose"
+    aria-label="Cerrar imagen">
     ×
   </button>
 
-  <img class="lightbox-image" id="lightboxImage" src="" alt="">
-
-  <div class="lightbox-info" id="lightboxInfo"></div>
+  <img
+    id="imageViewerImage"
+    src=""
+    alt="">
 
 </div>
-
 
 <script>
 document.addEventListener("DOMContentLoaded", function () {
 
+  const gallery = document.getElementById("portfolio-gallery");
+  const viewer = document.getElementById("imageViewer");
+  const viewerImage = document.getElementById("imageViewerImage");
+  const closeButton = document.getElementById("imageViewerClose");
+
   const galleryItems = document.querySelectorAll(".gallery-item");
 
-  const lightbox = document.getElementById("lightbox");
-  const lightboxImage = document.getElementById("lightboxImage");
-  const lightboxInfo = document.getElementById("lightboxInfo");
-  const closeButton = document.querySelector(".lightbox-close");
 
-
-  /* Crear automáticamente el texto del hover */
+  /* Crear capa de información */
 
   galleryItems.forEach(function (item) {
 
@@ -434,71 +437,90 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (!image) return;
 
-    item.setAttribute("data-info", image.alt);
+    const overlay = document.createElement("div");
 
+    overlay.className = "image-overlay";
 
-    /* Abrir imagen grande */
+    const text = document.createElement("span");
 
-    item.addEventListener("click", function (event) {
+    text.textContent = image.alt;
 
-      event.preventDefault();
+    overlay.appendChild(text);
 
-      lightboxImage.src = image.src;
-      lightboxImage.alt = image.alt;
-
-      lightboxInfo.textContent = image.alt;
-
-      lightbox.classList.add("open");
-
-      document.body.classList.add("lightbox-open");
-
-    });
+    item.appendChild(overlay);
 
   });
 
 
-  /* Cerrar con el botón */
+  /* Abrir imagen */
 
-  closeButton.addEventListener("click", function () {
+  gallery.addEventListener("click", function (event) {
 
-    lightbox.classList.remove("open");
-    document.body.classList.remove("lightbox-open");
+    const item = event.target.closest(".gallery-item");
+
+    if (!item) return;
+
+    const image = item.querySelector("img");
+
+    if (!image) return;
+
+    event.preventDefault();
+    event.stopPropagation();
+
+    viewerImage.src = image.src;
+    viewerImage.alt = image.alt;
+
+    viewer.classList.add("open");
+
+    document.body.classList.add("viewer-open");
 
   });
 
 
-  /* Cerrar haciendo clic fuera de la imagen */
+  /* Cerrar */
 
-  lightbox.addEventListener("click", function (event) {
+  function closeViewer() {
 
-    if (
-      event.target === lightbox ||
-      event.target === lightboxInfo
-    ) {
+    viewer.classList.remove("open");
 
-      lightbox.classList.remove("open");
-      document.body.classList.remove("lightbox-open");
+    document.body.classList.remove("viewer-open");
 
+    viewerImage.src = "";
+
+  }
+
+
+  closeButton.addEventListener("click", function (event) {
+
+    event.stopPropagation();
+
+    closeViewer();
+
+  });
+
+
+  viewer.addEventListener("click", function (event) {
+
+    if (event.target === viewer) {
+      closeViewer();
     }
 
   });
 
 
-  /* Cerrar con ESC */
-
   document.addEventListener("keydown", function (event) {
 
     if (event.key === "Escape") {
-
-      lightbox.classList.remove("open");
-      document.body.classList.remove("lightbox-open");
-
+      closeViewer();
     }
 
   });
 
 });
 </script>
+
+</body>
+</html>
   
 </body>
 </html>
