@@ -317,7 +317,7 @@ object-position:50% 40%;
 .shop-page{
   border-top:1px solid rgba(112,124,40,.18);
 
-  padding:120px 6vw 120px;
+  padding:120px 6vw 90px;
 }
 
 
@@ -523,7 +523,7 @@ object-position:50% 40%;
 ========================= */
 
 .about-page{
-  padding:110px 6vw 80px;
+  padding:110px 6vw 90px;
 }
 
 
@@ -592,7 +592,7 @@ object-position:50% 40%;
   align-items:center;
   justify-content:center;
 
-  padding:80px 7vw;
+  padding:90px 7vw;
 
   text-align:left;
 }
