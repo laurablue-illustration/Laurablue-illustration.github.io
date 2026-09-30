@@ -333,82 +333,58 @@
 
 </footer>
 
-  <script src="js/script.js"></script>
+<script src="js/script.js"></script>
 
-</script>
-  
 <script>
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener("DOMContentLoaded", function () {
 
-  document.querySelectorAll('.gallery-item').forEach(item => {
-    if (!item.classList.contains('category-ilustracion')) {
-      item.style.display = 'none';
+  const buttons = document.querySelectorAll(".category-button");
+  const items = document.querySelectorAll(".gallery-item");
+
+  function showCategory(category) {
+
+    items.forEach(function (item) {
+
+      if (item.classList.contains("category-" + category)) {
+        item.style.display = "";
+      } else {
+        item.style.display = "none";
+      }
+
+    });
+
+    buttons.forEach(function (button) {
+      button.classList.remove("active");
+    });
+
+    const activeButton = document.querySelector(
+      '.category-button[data-category="' + category + '"]'
+    );
+
+    if (activeButton) {
+      activeButton.classList.add("active");
     }
-  });
+  }
 
-});
-</script>
+  buttons.forEach(function (button) {
 
-  <script>
-document.addEventListener('DOMContentLoaded', function () {
-
-  const categoryButtons = document.querySelectorAll('.category-button');
-  const galleryItems = document.querySelectorAll('.gallery-item');
-
-  /* Mostrar ILUSTRACIÓN al entrar */
-  galleryItems.forEach(function (item) {
-    if (item.classList.contains('category-ilustracion')) {
-      item.style.display = 'block';
-      item.classList.add('is-visible');
-    } else {
-      item.style.display = 'none';
-    }
-  });
-
-
-  /* Cambiar de categoría */
-  categoryButtons.forEach(function (button) {
-
-    button.addEventListener('click', function (event) {
+    button.addEventListener("click", function (event) {
 
       event.preventDefault();
 
-      const category = button.dataset.category;
+      const category = this.getAttribute("data-category");
 
-      /* Cambiar botón activo */
-      categoryButtons.forEach(function (btn) {
-        btn.classList.remove('active');
-      });
-
-      button.classList.add('active');
-
-
-      /* Cambiar imágenes */
-      galleryItems.forEach(function (item) {
-
-        if (item.classList.contains('category-' + category)) {
-
-          item.style.display = 'block';
-
-          setTimeout(function () {
-            item.classList.add('is-visible');
-          }, 50);
-
-        } else {
-
-          item.style.display = 'none';
-          item.classList.remove('is-visible');
-
-        }
-
-      });
+      showCategory(category);
 
     });
 
   });
 
+  /* Al entrar en la web se muestra ILUSTRACIÓN */
+  showCategory("ilustracion");
+
 });
 </script>
-  
+
 </body>
 </html>
