@@ -309,58 +309,179 @@ object-position:50% 40%;
    TIENDA
 ========================= */
 
-.simple-page,
-.about-page,
-.contact-page{
+.shop-page{
   border-top:1px solid rgba(112,124,40,.18);
+
+  padding:120px 6vw 150px;
 }
 
 
-.simple-page{
-  padding:150px 10vw 180px;
+.shop-inner{
+  width:min(1180px,100%);
+  margin:0 auto;
 }
 
 
-.page-inner{
-  max-width:850px;
-  margin:auto;
-}
-
-
-.eyebrow{
-  font-size:14px;
-  font-weight:700;
-  letter-spacing:.16em;
-  margin:0 0 28px;
-}
-
-
-h1{
-  font-size:clamp(48px,6vw,88px);
-  line-height:.98;
-  margin:0 0 35px;
-  letter-spacing:-.035em;
-}
-
-
-h1 em{
-  font-family:Georgia,serif;
-  font-weight:400;
-}
-
-
-.simple-page p:not(.eyebrow){
+.shop-intro{
   max-width:570px;
+
+  margin:0 0 65px;
+
   font-size:18px;
-  line-height:1.65;
+  line-height:1.6;
 }
 
 
-.text-link{
-  display:inline-block;
-  margin-top:28px;
+/* =========================
+   PRODUCTOS
+========================= */
+
+.shop-grid{
+  display:grid;
+
+  grid-template-columns:1fr 1fr;
+
+  gap:28px;
+}
+
+
+.shop-card{
+  display:block;
+
+  color:var(--olive);
+
+  text-decoration:none;
+
+  transition:transform .25s ease;
+}
+
+
+.shop-card:hover{
+  transform:translateY(-4px);
+}
+
+
+/* =========================
+   IMÁGENES
+========================= */
+
+.shop-image{
+  width:100%;
+
+  aspect-ratio:1 / 1;
+
+  overflow:hidden;
+
+  background:#f3eee0;
+}
+
+
+.shop-image img{
+  display:block;
+
+  width:100%;
+  height:100%;
+
+  object-fit:cover;
+
+  transition:transform .35s ease;
+}
+
+
+.shop-card:hover .shop-image img{
+  transform:scale(1.025);
+}
+
+
+/* =========================
+   INFORMACIÓN
+========================= */
+
+.shop-info{
+  padding:22px 2px 0;
+}
+
+
+.shop-type{
+  margin:0 0 9px;
+
+  font-size:13px;
+
   font-weight:700;
-  font-size:14px;
+
+  letter-spacing:.15em;
+
+  color:var(--pink);
+}
+
+
+.shop-info h2{
+  margin:0 0 7px;
+
+  font-size:24px;
+
+  line-height:1.15;
+
+  font-weight:700;
+}
+
+
+.shop-info p:not(.shop-type){
+  margin:0 0 16px;
+
+  font-size:15px;
+}
+
+
+.shop-link{
+  display:inline-block;
+
+  font-size:13px;
+
+  font-weight:700;
+
+  letter-spacing:.04em;
+
+  color:var(--olive);
+
+  transition:opacity .2s ease;
+}
+
+
+.shop-card:hover .shop-link{
+  opacity:.55;
+}
+
+
+/* =========================
+   MÓVIL
+========================= */
+
+@media(max-width:800px){
+
+  .shop-page{
+    padding:90px 7vw 110px;
+  }
+
+
+  .shop-grid{
+    grid-template-columns:1fr;
+
+    gap:55px;
+  }
+
+
+  .shop-intro{
+    font-size:17px;
+
+    margin-bottom:45px;
+  }
+
+
+  .shop-info h2{
+    font-size:22px;
+  }
+
 }
 
 
