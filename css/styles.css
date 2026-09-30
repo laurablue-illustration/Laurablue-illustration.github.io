@@ -330,7 +330,7 @@ object-position:50% 40%;
 .shop-intro{
   max-width:540px;
 
-  margin:0 0 65px;
+  margin:0 0 50px;
 
   font-size:18px;
   line-height:1.6;
@@ -625,7 +625,7 @@ object-position:50% 40%;
 
 
 .contact-illustration img{
-  width:min(100%,750px);
+  width:min(100%,850px);
   height:auto;
   display:block;
 
