@@ -405,7 +405,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const galleryItems = document.querySelectorAll(".gallery-item");
 
-  /* Crear el efecto de información */
+
+  /* =================================
+     CREAR EL TEXTO DEL HOVER
+  ================================= */
 
   galleryItems.forEach(function (item) {
 
@@ -413,20 +416,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (!image) return;
 
-    const overlay = document.createElement("div");
-
-    overlay.className = "gallery-hover-info";
-
-    const text = document.createElement("span");
-
-    text.textContent = image.alt;
-
-    overlay.appendChild(text);
-
-    item.appendChild(overlay);
+    item.setAttribute("data-title", image.alt);
 
 
-    /* Al hacer clic */
+    /* =================================
+       ABRIR IMAGEN
+    ================================= */
 
     item.addEventListener("click", function (event) {
 
@@ -440,25 +435,41 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
 
-  /* Crear ventana */
+  /* =================================
+     CREAR VENTANA
+  ================================= */
 
   const modal = document.createElement("div");
 
   modal.className = "gallery-modal";
 
   modal.innerHTML = `
-    <button class="gallery-modal-close" type="button">×</button>
-    <img class="gallery-modal-image" src="" alt="">
+    <button
+      class="gallery-modal-close"
+      type="button"
+      aria-label="Cerrar">
+      ×
+    </button>
+
+    <img
+      class="gallery-modal-image"
+      src=""
+      alt="">
   `;
 
   document.body.appendChild(modal);
 
 
-  const modalImage = modal.querySelector(".gallery-modal-image");
-  const closeButton = modal.querySelector(".gallery-modal-close");
+  const modalImage =
+    modal.querySelector(".gallery-modal-image");
+
+  const closeButton =
+    modal.querySelector(".gallery-modal-close");
 
 
-  /* Abrir */
+  /* =================================
+     ABRIR
+  ================================= */
 
   function openImage(image) {
 
@@ -472,7 +483,9 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
 
-  /* Cerrar */
+  /* =================================
+     CERRAR
+  ================================= */
 
   function closeImage() {
 
@@ -488,12 +501,13 @@ document.addEventListener("DOMContentLoaded", function () {
   closeButton.addEventListener("click", function (event) {
 
     event.preventDefault();
-    event.stopPropagation();
 
     closeImage();
 
   });
 
+
+  /* Cerrar haciendo clic en el fondo */
 
   modal.addEventListener("click", function (event) {
 
@@ -503,6 +517,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
   });
 
+
+  /* Cerrar con ESC */
 
   document.addEventListener("keydown", function (event) {
 
