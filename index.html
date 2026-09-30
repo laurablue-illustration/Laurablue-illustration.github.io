@@ -340,55 +340,65 @@
 <script src="js/script.js"></script>
 
 <script>
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener('DOMContentLoaded', function() {
 
-  const buttons = document.querySelectorAll(".category-button");
-  const items = document.querySelectorAll(".gallery-item");
+  const categoryButtons = document.querySelectorAll('.category-button');
+  const galleryItems = document.querySelectorAll('.gallery-item');
 
-  function showCategory(category) {
-
-    items.forEach(function (item) {
-
-      if (item.classList.contains("category-" + category)) {
-        item.style.display = "";
-      } else {
-        item.style.display = "none";
-      }
-
-    });
-
-    buttons.forEach(function (button) {
-      button.classList.remove("active");
-    });
-
-    const activeButton = document.querySelector(
-      '.category-button[data-category="' + category + '"]'
-    );
-
-    if (activeButton) {
-      activeButton.classList.add("active");
+  /* Mostrar ILUSTRACIÓN al entrar */
+  galleryItems.forEach(function(item) {
+    if (item.classList.contains('category-ilustracion')) {
+      item.style.display = 'block';
+      item.classList.add('is-visible');
+    } else {
+      item.style.display = 'none';
     }
-  }
+  });
 
-  buttons.forEach(function (button) {
 
-    button.addEventListener("click", function (event) {
+  /* Cambiar de categoría */
+  categoryButtons.forEach(function(button) {
+
+    button.addEventListener('click', function(event) {
 
       event.preventDefault();
 
-      const category = this.getAttribute("data-category");
+      const category = button.dataset.category;
 
-      showCategory(category);
+      /* Cambiar botón activo */
+      categoryButtons.forEach(function(btn) {
+        btn.classList.remove('active');
+      });
+
+      button.classList.add('active');
+
+
+      /* Cambiar imágenes */
+      galleryItems.forEach(function(item) {
+
+        if (item.classList.contains('category-' + category)) {
+
+          item.style.display = 'block';
+
+          setTimeout(function() {
+            item.classList.add('is-visible');
+          }, 50);
+
+        } else {
+
+          item.style.display = 'none';
+          item.classList.remove('is-visible');
+
+        }
+
+      });
 
     });
 
   });
 
-  /* Al entrar en la web se muestra ILUSTRACIÓN */
-  showCategory("ilustracion");
-
 });
 </script>
-
+  
 </body>
 </html>
