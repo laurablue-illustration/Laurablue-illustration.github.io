@@ -586,7 +586,7 @@ object-position:50% 40%;
 ========================= */
 
 .contact-page{
-  min-height:620px;
+  min-height:700px;
 
   display:flex;
   align-items:center;
@@ -607,7 +607,7 @@ object-position:50% 40%;
   width:min(1180px,100%);
 
   display:grid;
-  grid-template-columns:42% 58%;
+  grid-template-columns:50% 55%;
 
   align-items:center;
 
@@ -625,7 +625,7 @@ object-position:50% 40%;
 
 
 .contact-illustration img{
-  width:min(100%,800px);
+  width:min(100%,750px);
   height:auto;
   display:block;
 
