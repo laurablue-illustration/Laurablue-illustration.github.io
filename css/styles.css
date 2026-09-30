@@ -884,14 +884,14 @@ footer{
   opacity:.55;
 }
 
-/* =========================
-   GALERÍA — EFECTO HOVER
-========================= */
+/* ========================================
+   GALERÍA — EFECTO AL PASAR EL CURSOR
+======================================== */
 
 .gallery-item{
   position:relative;
   overflow:hidden;
-  cursor:zoom-in;
+  cursor:pointer;
 }
 
 .gallery-item img{
@@ -903,62 +903,51 @@ footer{
   mix-blend-mode:normal !important;
   opacity:1 !important;
 
-  transition:transform .4s ease;
+  transition:transform .35s ease;
 }
 
 
 /* Capa blanca */
 
-.gallery-item::before{
-  content:"";
+.gallery-item .image-overlay{
   position:absolute;
   inset:0;
 
   background:rgba(255,255,255,.78);
 
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
   opacity:0;
-  z-index:2;
 
   transition:opacity .3s ease;
+
+  z-index:5;
+
+  pointer-events:none;
 }
 
 
 /* Texto */
 
-.gallery-item::after{
-  content:attr(data-info);
-
-  position:absolute;
-
-  top:50%;
-  left:50%;
-
-  transform:translate(-50%,-50%);
-
-  z-index:3;
-
+.gallery-item .image-overlay span{
   color:var(--olive);
 
   font-size:18px;
   font-weight:600;
 
   text-align:center;
-  letter-spacing:.03em;
 
-  opacity:0;
+  padding:20px;
 
-  transition:opacity .3s ease;
-
-  pointer-events:none;
-
-  width:80%;
+  max-width:80%;
 }
 
 
-/* Al pasar el ratón */
+/* Hover */
 
-.gallery-item:hover::before,
-.gallery-item:hover::after{
+.gallery-item:hover .image-overlay{
   opacity:1;
 }
 
@@ -966,6 +955,96 @@ footer{
   transform:scale(1.025);
 }
 
+
+/* ========================================
+   VISOR DE IMAGEN GRANDE
+======================================== */
+
+.image-viewer{
+  position:fixed;
+  top:0;
+  left:0;
+
+  width:100vw;
+  height:100vh;
+
+  background:rgba(253,251,234,.96);
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  padding:40px;
+
+  z-index:9999;
+
+  opacity:0;
+  visibility:hidden;
+
+  transition:
+    opacity .25s ease,
+    visibility .25s ease;
+
+  cursor:zoom-out;
+}
+
+.image-viewer.open{
+  opacity:1;
+  visibility:visible;
+}
+
+.image-viewer img{
+  display:block;
+
+  max-width:90vw;
+  max-height:88vh;
+
+  width:auto;
+  height:auto;
+
+  object-fit:contain;
+
+  box-shadow:0 10px 40px rgba(0,0,0,.12);
+
+  cursor:default;
+}
+
+
+/* Botón cerrar */
+
+.image-viewer-close{
+  position:absolute;
+
+  top:20px;
+  right:30px;
+
+  border:0;
+  background:none;
+
+  color:var(--olive);
+
+  font-family:Arial,sans-serif;
+  font-size:42px;
+  font-weight:300;
+
+  line-height:1;
+
+  cursor:pointer;
+
+  z-index:2;
+}
+
+.image-viewer-close:hover{
+  opacity:.5;
+}
+
+
+/* No hacer scroll con la imagen abierta */
+
+body.viewer-open{
+  overflow:hidden;
+}
+  
 /* =========================
    LIGHTBOX — IMAGEN GRANDE
 ========================= */
