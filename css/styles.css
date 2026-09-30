@@ -177,11 +177,11 @@ object-position:50% 40%;
 ========================= */
 
 .gallery{
-  width:min(1200px,92vw);
+  width:min(1300px,92vw);
   margin:0 auto;
   padding-bottom:100px;
 
-  column-count:3;
+  column-count:2;
   column-gap:18px;
 }
 
