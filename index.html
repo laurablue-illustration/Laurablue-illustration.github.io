@@ -470,5 +470,18 @@ categoryButtons.forEach(button => {
 
 });
 </script>
+  
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+
+  document.querySelectorAll('.gallery-item').forEach(item => {
+    if (!item.classList.contains('category-ilustracion')) {
+      item.style.display = 'none';
+    }
+  });
+
+});
+</script>
+  
 </body>
 </html>
