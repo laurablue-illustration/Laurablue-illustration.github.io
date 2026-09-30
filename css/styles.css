@@ -32,6 +32,11 @@ a{
   text-decoration:none;
 }
 
+ .shop-page,
+.about-page,
+.contact-page {
+  border-top: 1px solid rgba(112,124,40,.18);
+}
 
 /* =========================
    CABECERA
@@ -1152,3 +1157,6 @@ footer{
 body.gallery-modal-open{
   overflow:hidden;
 }
+
+  
+ 
