@@ -42,10 +42,10 @@
 </div>
 
 
-     <nav class="category-nav" aria-label="Categorías del portfolio">
-  <a href="#" class="category-link active" data-category="ilustracion">ILUSTRACIÓN</a>
-  <a href="#" class="category-link" data-category="editorial">EDITORIAL</a>
-  <a href="#" class="category-link" data-category="carteles">CARTELES</a>
+   <nav class="category-nav" aria-label="Categorías del portfolio">
+  <a href="#" class="category-button active" data-category="ilustracion">ILUSTRACIÓN</a>
+  <a href="#" class="category-button" data-category="editorial">EDITORIAL</a>
+  <a href="#" class="category-button" data-category="carteles">CARTELES</a>
 </nav>
 
 
@@ -431,6 +431,44 @@ galleryItems.forEach((item, index) => {
 
 });
 </script>
-  
+
+  <script>
+const categoryButtons = document.querySelectorAll('.category-button');
+const galleryItems = document.querySelectorAll('.gallery-item');
+
+categoryButtons.forEach(button => {
+
+  button.addEventListener('click', function(event) {
+
+    event.preventDefault();
+
+    const category = this.dataset.category;
+
+    categoryButtons.forEach(btn => {
+      btn.classList.remove('active');
+    });
+
+    this.classList.add('active');
+
+    galleryItems.forEach(item => {
+
+      if (item.classList.contains('category-' + category)) {
+        item.style.display = 'block';
+
+        setTimeout(() => {
+          item.classList.add('is-visible');
+        }, 50);
+
+      } else {
+        item.style.display = 'none';
+        item.classList.remove('is-visible');
+      }
+
+    });
+
+  });
+
+});
+</script>
 </body>
 </html>
