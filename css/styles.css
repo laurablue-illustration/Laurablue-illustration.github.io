@@ -898,14 +898,14 @@ footer{
   display:block;
   width:100%;
   height:auto;
+
   filter:none !important;
   mix-blend-mode:normal !important;
   opacity:1 !important;
+
   transition:transform .3s ease;
 }
 
-
-/* Capa blanca */
 
 .gallery-hover-info{
   position:absolute;
@@ -927,18 +927,17 @@ footer{
 }
 
 
-/* Texto */
-
 .gallery-hover-info span{
   color:var(--pink);
+
   font-size:18px;
   font-weight:600;
+
   text-align:center;
+
   padding:20px;
 }
 
-
-/* Hover */
 
 .gallery-item:hover .gallery-hover-info{
   opacity:1;
@@ -950,33 +949,37 @@ footer{
 
 
 /* ========================================
-   VENTANA DE IMAGEN GRANDE
+   VENTANA DE IMAGEN
 ======================================== */
 
 .gallery-modal{
-  position:fixed !important;
-  inset:0 !important;
+  position:fixed;
 
-  width:100vw !important;
-  height:100vh !important;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
 
-  display:flex !important;
-  align-items:center !important;
-  justify-content:center !important;
+  width:100%;
+  height:100%;
+
+  display:flex;
+
+  align-items:center;
+  justify-content:center;
 
   padding:40px;
 
-  background:rgba(255,255,255,.96);
+  background:rgba(255,255,255,.97);
 
-  z-index:999999 !important;
+  z-index:999999;
 
   opacity:0;
   visibility:hidden;
 
-  transition:opacity .25s ease, visibility .25s ease;
-
-  cursor:zoom-out;
+  transition:opacity .25s ease;
 }
+
 
 .gallery-modal.is-open{
   opacity:1;
@@ -984,9 +987,7 @@ footer{
 }
 
 
-/* Imagen dentro de la ventana */
-
-.gallery-modal img{
+.gallery-modal-image{
   display:block;
 
   width:auto !important;
@@ -997,43 +998,42 @@ footer{
 
   object-fit:contain;
 
-  box-shadow:0 8px 35px rgba(0,0,0,.12);
-
-  cursor:default;
+  box-shadow:0 10px 40px rgba(0,0,0,.12);
 }
 
-
-/* Botón X */
 
 .gallery-modal-close{
   position:absolute;
 
-  top:22px;
+  top:20px;
   right:30px;
 
   width:45px;
   height:45px;
 
   border:0;
+  padding:0;
+
   background:transparent;
 
   color:var(--olive);
 
   font-family:Arial,sans-serif;
-  font-size:38px;
+  font-size:40px;
   font-weight:300;
 
-  line-height:1;
+  line-height:45px;
 
   cursor:pointer;
+
+  z-index:1000000;
 }
+
 
 .gallery-modal-close:hover{
   opacity:.5;
 }
 
-
-/* No scroll mientras está abierta */
 
 body.gallery-modal-open{
   overflow:hidden;
