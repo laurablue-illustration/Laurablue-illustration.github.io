@@ -1038,3 +1038,37 @@ footer{
 body.gallery-modal-open{
   overflow:hidden;
 }
+.gallery-item{
+  position:relative !important;
+  overflow:hidden !important;
+}
+
+.gallery-item::after{
+  content:"VER IMAGEN";
+
+  position:absolute !important;
+  inset:0 !important;
+
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+
+  background:rgba(255,255,255,.8) !important;
+
+  color:#f5b5ac !important;
+
+  font-size:18px !important;
+  font-weight:600 !important;
+
+  opacity:0 !important;
+
+  pointer-events:none !important;
+
+  z-index:999 !important;
+
+  transition:opacity .3s ease !important;
+}
+
+.gallery-item:hover::after{
+  opacity:1 !important;
+}
