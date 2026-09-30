@@ -400,9 +400,143 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 
+<script>
+document.addEventListener("DOMContentLoaded", function () {
 
-</body>
-</html>
+  const gallery = document.getElementById("portfolio-gallery");
+
+  if (!gallery) return;
+
+
+  /* =================================
+     CREAR INFORMACIÓN DE CADA IMAGEN
+  ================================= */
+
+  const items = gallery.querySelectorAll(".gallery-item");
+
+  items.forEach(function (item) {
+
+    const image = item.querySelector("img");
+
+    if (!image) return;
+
+    const info = document.createElement("div");
+
+    info.className = "gallery-hover-info";
+
+    const text = document.createElement("span");
+
+    text.textContent = image.alt;
+
+    info.appendChild(text);
+
+    item.appendChild(info);
+
+  });
+
+
+  /* =================================
+     CREAR EL VISOR
+  ================================= */
+
+  const modal = document.createElement("div");
+
+  modal.className = "gallery-modal";
+
+  modal.innerHTML = `
+    <button class="gallery-modal-close" aria-label="Cerrar">×</button>
+    <img src="" alt="">
+  `;
+
+  document.body.appendChild(modal);
+
+
+  const modalImage = modal.querySelector("img");
+  const closeButton = modal.querySelector(".gallery-modal-close");
+
+
+  /* =================================
+     ABRIR IMAGEN
+  ================================= */
+
+  gallery.addEventListener("click", function (event) {
+
+    const item = event.target.closest(".gallery-item");
+
+    if (!item) return;
+
+    const image = item.querySelector("img");
+
+    if (!image) return;
+
+
+    /* MUY IMPORTANTE:
+       evita que href="#" mueva la página */
+
+    event.preventDefault();
+    event.stopPropagation();
+
+
+    modalImage.src = image.src;
+    modalImage.alt = image.alt;
+
+    modal.classList.add("is-open");
+
+    document.body.classList.add("gallery-modal-open");
+
+  });
+
+
+  /* =================================
+     CERRAR
+  ================================= */
+
+  function closeModal() {
+
+    modal.classList.remove("is-open");
+
+    document.body.classList.remove("gallery-modal-open");
+
+    setTimeout(function () {
+      modalImage.src = "";
+    }, 250);
+
+  }
+
+
+  closeButton.addEventListener("click", function (event) {
+
+    event.preventDefault();
+    event.stopPropagation();
+
+    closeModal();
+
+  });
+
+
+  /* Clic en el fondo blanco */
+
+  modal.addEventListener("click", function (event) {
+
+    if (event.target === modal) {
+      closeModal();
+    }
+
+  });
+
+
+  /* ESC */
+
+  document.addEventListener("keydown", function (event) {
+
+    if (event.key === "Escape") {
+      closeModal();
+    }
+
+  });
+
+});
+</script>
   
 </body>
 </html>
