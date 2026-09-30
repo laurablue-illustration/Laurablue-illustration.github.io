@@ -457,6 +457,34 @@ object-position:50% 40%;
   opacity:.55;
 }
 
+/* =========================
+   CAMBIO DE IMAGEN EN TIENDA
+========================= */
+
+.shop-image{
+  position:relative;
+}
+
+.shop-image img{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.shop-image-hover{
+  position:absolute !important;
+  top:0;
+  left:0;
+
+  opacity:0;
+
+  transition:opacity .3s ease;
+}
+
+.shop-card:hover .shop-image-hover{
+  opacity:1;
+}
 
 /* =========================
    MÓVIL
