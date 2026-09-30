@@ -171,6 +171,13 @@ object-position:50% 40%;
   text-decoration:underline;
 }
 
+.category-button{
+  cursor:pointer;
+}
+
+.category-button.active{
+  color:#f5b5ac;
+}
 
 /* =========================
    GALERÍA
