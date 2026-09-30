@@ -403,79 +403,64 @@ document.addEventListener('DOMContentLoaded', function() {
 <script>
 document.addEventListener("DOMContentLoaded", function () {
 
-  const gallery = document.getElementById("portfolio-gallery");
+  const galleryItems = document.querySelectorAll(".gallery-item");
 
-  if (!gallery) return;
+  /* Crear el efecto de información */
 
-
-  /* =================================
-     CREAR INFORMACIÓN DE CADA IMAGEN
-  ================================= */
-
-  const items = gallery.querySelectorAll(".gallery-item");
-
-  items.forEach(function (item) {
+  galleryItems.forEach(function (item) {
 
     const image = item.querySelector("img");
 
     if (!image) return;
 
-    const info = document.createElement("div");
+    const overlay = document.createElement("div");
 
-    info.className = "gallery-hover-info";
+    overlay.className = "gallery-hover-info";
 
     const text = document.createElement("span");
 
     text.textContent = image.alt;
 
-    info.appendChild(text);
+    overlay.appendChild(text);
 
-    item.appendChild(info);
+    item.appendChild(overlay);
+
+
+    /* Al hacer clic */
+
+    item.addEventListener("click", function (event) {
+
+      event.preventDefault();
+      event.stopPropagation();
+
+      openImage(image);
+
+    });
 
   });
 
 
-  /* =================================
-     CREAR EL VISOR
-  ================================= */
+  /* Crear ventana */
 
   const modal = document.createElement("div");
 
   modal.className = "gallery-modal";
 
   modal.innerHTML = `
-    <button class="gallery-modal-close" aria-label="Cerrar">×</button>
-    <img src="" alt="">
+    <button class="gallery-modal-close" type="button">×</button>
+    <img class="gallery-modal-image" src="" alt="">
   `;
 
   document.body.appendChild(modal);
 
 
-  const modalImage = modal.querySelector("img");
+  const modalImage = modal.querySelector(".gallery-modal-image");
   const closeButton = modal.querySelector(".gallery-modal-close");
 
 
-  /* =================================
-     ABRIR IMAGEN
-  ================================= */
+  /* Abrir */
 
-  gallery.addEventListener("click", function (event) {
-
-    const item = event.target.closest(".gallery-item");
-
-    if (!item) return;
-
-    const image = item.querySelector("img");
-
-    if (!image) return;
-
-
-    /* MUY IMPORTANTE:
-       evita que href="#" mueva la página */
-
-    event.preventDefault();
-    event.stopPropagation();
-
+  function openImage(image) {
 
     modalImage.src = image.src;
     modalImage.alt = image.alt;
@@ -484,22 +469,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
     document.body.classList.add("gallery-modal-open");
 
-  });
+  }
 
 
-  /* =================================
-     CERRAR
-  ================================= */
+  /* Cerrar */
 
-  function closeModal() {
+  function closeImage() {
 
     modal.classList.remove("is-open");
 
     document.body.classList.remove("gallery-modal-open");
 
-    setTimeout(function () {
-      modalImage.src = "";
-    }, 250);
+    modalImage.src = "";
 
   }
 
@@ -509,34 +490,30 @@ document.addEventListener("DOMContentLoaded", function () {
     event.preventDefault();
     event.stopPropagation();
 
-    closeModal();
+    closeImage();
 
   });
 
 
-  /* Clic en el fondo blanco */
-
   modal.addEventListener("click", function (event) {
 
     if (event.target === modal) {
-      closeModal();
+      closeImage();
     }
 
   });
 
 
-  /* ESC */
-
   document.addEventListener("keydown", function (event) {
 
     if (event.key === "Escape") {
-      closeModal();
+      closeImage();
     }
 
   });
 
 });
 </script>
-  
+
 </body>
 </html>
