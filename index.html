@@ -399,6 +399,106 @@ document.addEventListener('DOMContentLoaded', function() {
 
 });
 </script>
+
+  <!-- VENTANA PARA VER LA IMAGEN GRANDE -->
+
+<div class="lightbox" id="lightbox">
+
+  <button class="lightbox-close" aria-label="Cerrar">
+    ×
+  </button>
+
+  <img class="lightbox-image" id="lightboxImage" src="" alt="">
+
+  <div class="lightbox-info" id="lightboxInfo"></div>
+
+</div>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  const galleryItems = document.querySelectorAll(".gallery-item");
+
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImage = document.getElementById("lightboxImage");
+  const lightboxInfo = document.getElementById("lightboxInfo");
+  const closeButton = document.querySelector(".lightbox-close");
+
+
+  /* Crear automáticamente el texto del hover */
+
+  galleryItems.forEach(function (item) {
+
+    const image = item.querySelector("img");
+
+    if (!image) return;
+
+    item.setAttribute("data-info", image.alt);
+
+
+    /* Abrir imagen grande */
+
+    item.addEventListener("click", function (event) {
+
+      event.preventDefault();
+
+      lightboxImage.src = image.src;
+      lightboxImage.alt = image.alt;
+
+      lightboxInfo.textContent = image.alt;
+
+      lightbox.classList.add("open");
+
+      document.body.classList.add("lightbox-open");
+
+    });
+
+  });
+
+
+  /* Cerrar con el botón */
+
+  closeButton.addEventListener("click", function () {
+
+    lightbox.classList.remove("open");
+    document.body.classList.remove("lightbox-open");
+
+  });
+
+
+  /* Cerrar haciendo clic fuera de la imagen */
+
+  lightbox.addEventListener("click", function (event) {
+
+    if (
+      event.target === lightbox ||
+      event.target === lightboxInfo
+    ) {
+
+      lightbox.classList.remove("open");
+      document.body.classList.remove("lightbox-open");
+
+    }
+
+  });
+
+
+  /* Cerrar con ESC */
+
+  document.addEventListener("keydown", function (event) {
+
+    if (event.key === "Escape") {
+
+      lightbox.classList.remove("open");
+      document.body.classList.remove("lightbox-open");
+
+    }
+
+  });
+
+});
+</script>
   
 </body>
 </html>
