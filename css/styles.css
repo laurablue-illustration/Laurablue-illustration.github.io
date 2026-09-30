@@ -650,12 +650,12 @@ footer{
   gap:35px;
 }
 
-.socials a{
-  color:#f5b5ac;
+footer .socials a{
+  color:#f5b5ac !important;
   font-size:16px;
   font-weight:600;
-  text-decoration:none;
   text-transform:uppercase;
+  text-decoration:none;
 }
 
 .socials a:hover{
