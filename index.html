@@ -472,62 +472,74 @@ body.gallery-modal-open {
 
         </div>
 
+<form
+  class="contact-form"
+  id="contactForm"
+  action="https://formsubmit.co/laurablue.illustration@gmail.com"
+  method="POST"
+>
 
-        <form class="contact-form" id="contactForm">
+  <input
+    type="hidden"
+    name="_subject"
+    value="Nuevo mensaje desde la web de Laurablue"
+  >
 
-          <div class="field-row">
+  <input
+    type="hidden"
+    name="_template"
+    value="table"
+  >
 
-            <label>
-              Nombre <span>*</span>
-              <input
-                type="text"
-                name="nombre"
-                required
-              >
-            </label>
+  <div class="field-row">
 
-            <label>
-              Apellidos <span>*</span>
-              <input
-                type="text"
-                name="apellidos"
-                required
-              >
-            </label>
+    <label>
+      Nombre <span>*</span>
+      <input
+        type="text"
+        name="nombre"
+        required
+      >
+    </label>
 
-          </div>
+    <label>
+      Apellidos <span>*</span>
+      <input
+        type="text"
+        name="apellidos"
+        required
+      >
+    </label>
 
+  </div>
 
-          <label>
-            Email <span>*</span>
-            <input
-              type="email"
-              name="email"
-              autocomplete="off"
-              required
-            >
-          </label>
+  <label>
+    Email <span>*</span>
+    <input
+      type="email"
+      name="email"
+      autocomplete="off"
+      required
+    >
+  </label>
 
+  <label>
+    Mensaje <span>*</span>
+    <textarea
+      name="mensaje"
+      required
+    ></textarea>
+  </label>
 
-          <label>
-            Mensaje <span>*</span>
-            <textarea
-              name="mensaje"
-              required
-            ></textarea>
-          </label>
+  <button type="submit">
+    Enviar
+  </button>
 
+  <p class="form-note" id="formNote">
+    Gracias por escribirme. Te responderé lo antes posible.
+  </p>
 
-          <button type="submit">
-            Enviar
-          </button>
-
-
-          <p class="form-note" id="formNote">
-            Al pulsar Enviar se abrirá tu aplicación de correo.
-          </p>
-
-        </form>
+</form>
 
       </div>
 
