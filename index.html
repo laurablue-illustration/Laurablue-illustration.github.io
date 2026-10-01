@@ -513,15 +513,16 @@ body.gallery-modal-open {
 
   </div>
 
-  <label>
-    Email <span>*</span>
+<label>
+  Email <span>*</span>
   <input
     type="email"
-    name="_replyto"
+    name="email"
     autocomplete="off"
     required
   >
-  </label>
+</label>
+
 
   <label>
     Mensaje <span>*</span>
@@ -539,6 +540,8 @@ body.gallery-modal-open {
     Gracias por escribirme. Te responderé lo antes posible.
   </p>
 
+  <input type="hidden" name="_replyto" value="">
+  
 </form>
 
       </div>
@@ -764,5 +767,21 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 </script>
 
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  const form = document.getElementById("contactForm");
+  const email = document.getElementById("email");
+  const replyTo = document.getElementById("replyTo");
+
+  if (!form || !email || !replyTo) return;
+
+  form.addEventListener("submit", function () {
+    replyTo.value = email.value;
+  });
+
+});
+</script>
+  
 </body>
 </html>
