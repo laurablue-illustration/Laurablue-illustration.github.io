@@ -1096,7 +1096,6 @@ footer{
 .category-editorial::before,
 .category-carteles::before{
   content:attr(data-title);
-  white-space:pre-line;
 
   position:absolute;
 
@@ -1113,6 +1112,7 @@ footer{
   font-weight:600;
 
   text-align:center;
+  white-space: pre-line !important;
 
   opacity:0;
 
