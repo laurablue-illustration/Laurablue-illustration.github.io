@@ -251,29 +251,29 @@ body.gallery-modal-open {
   <!-- EDITORIAL -->
 
  <a class="gallery-item category-editorial" href="#"
-       data-title="Portada ficticia para "Alicia en el País de las Maravillas"">
+       data-title="Portada ficticia para "Alicia en el País de las Maravillas""
     <img src="images/IMG_8306.jpg" alt="Portada ficticia para "Alicia en el País de las Maravillas"">
   </a>
 
   <a class="gallery-item item-large category-editorial" href="#"
-    data-title="Mini-cómic para Liana Editorial">
+    data-title="Mini-cómic para Liana Editorial"
     <img src="images/IMG_7359.jpg" alt="Mini-cómic para Liana Editorial">
   </a>
   
   <a class="gallery-item category-editorial" href="#"
-         data-title="Portada ficticia para "El Principito">
+         data-title="Portada ficticia para "El Principito"
     <img src="images/IMG_6884.jpg" alt="Portada ficticia para "El Principito"">
   </a>
 
   <a class="gallery-item category-editorial" href="#"
          data-title="Proyecto ficticio de
-    "Tras la sombra de Lautrec">
+    "Tras la sombra de Lautrec"
     <img src="images/TrasLaSombraDeLautrec_Portada3.jpg" alt="Proyecto ficticio de "Tras la sombra de Lautrec"">
   </a>
 
   <a class="gallery-item category-editorial" href="#"
       data-title="Portada para TFG de novela ilustrada de 
-    "El Hogar de Miss Peregrine para Niños Peculiares"">
+    "El Hogar de Miss Peregrine para Niños Peculiares""
     <img src="images/MISSPEREGRINE_CUBIERTA_FINAL.jpg" alt="Portada para TFG de novela ilustrada de "El Hogar de Miss Peregrine para Niños Peculiares"">
   </a>
   
@@ -282,28 +282,28 @@ body.gallery-modal-open {
 
   <a class="gallery-item item-large category-carteles" href="#"
      data-title="Propuesta de cartel para 
-    el 10º Festival de Cine de Santander">
+    el 10º Festival de Cine de Santander"
     <img src="images/Cartel Festival Cine Santander_Laura Ferrer.jpg" alt="Propuesta de cartel para el 10º Festival de Cine de Santander">
   </a>
 
   <a class="gallery-item category-carteles" href="#"
     data-title="Propuesta de cartel para el 
-    Día Internacional de las Personas con Discapacidad">
+    Día Internacional de las Personas con Discapacidad"
     <img src="images/Cartel_Día Internacional de las Personas con Discapacidad6.jpg" alt="Propuesta de cartel para el Día Internacional de las Personas con Discapacidad">
   </a>
 
   <a class="gallery-item category-carteles" href="#"
-       data-title="Cartel oficial Festival ParlaCuenta 2026">
+       data-title="Cartel oficial Festival ParlaCuenta 2026"
     <img src="images/IMG_8228.jpg" alt="Cartel oficial Festival ParlaCuenta 2026">
   </a>
 
   <a class="gallery-item category-carteles" href="#"
-       data-title="Cartel no oficial del Día del Libro 2026">
+       data-title="Cartel no oficial del Día del Libro 2026"
     <img src="images/DÍA DEL LIBRO 2026_1.jpg" alt="Cartel no oficial del Día del Libro 2026">
   </a>
   
  <a class="gallery-item category-carteles" href="#"
-       data-title="Cartel oficial Festival ParlaCuenta 2023">
+       data-title="Cartel oficial Festival ParlaCuenta 2023"
     <img src="images/Cartel_Parlacuenta_ (1).jpg" alt="Cartel oficial Festival ParlaCuenta 2023">
   </a>
 
@@ -701,31 +701,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
   modal.className = "gallery-modal";
 
- modal.innerHTML = `
-  <div class="gallery-modal-content">
+modal.innerHTML = `
+  <button
+    class="gallery-modal-close"
+    type="button"
+    aria-label="Cerrar">
+    ×
+  </button>
 
-    <button
-      class="gallery-modal-close"
-      type="button"
-      aria-label="Cerrar">
-      ×
-    </button>
-
-    <img
-      class="gallery-modal-image"
-      src=""
-      alt="">
-
-    <p class="gallery-modal-title"></p>
-
-  </div>
+  <img
+    class="gallery-modal-image"
+    src=""
+    alt="">
 `;
 
   document.body.appendChild(modal);
-
-
-  const modalImage =
-    modal.querySelector(".gallery-modal-image");
 
   const modalTitle =
   modal.querySelector(".gallery-modal-title");
@@ -745,11 +735,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const item = image.closest(".gallery-item");
 
-  if (item) {
-    modalTitle.textContent =
-      item.getAttribute("data-title") || image.alt;
-  }
-
   modal.classList.add("is-open");
 
   document.body.classList.add("gallery-modal-open");
@@ -768,7 +753,6 @@ document.addEventListener("DOMContentLoaded", function () {
     document.body.classList.remove("gallery-modal-open");
 
   modalImage.src = "";
-  modalTitle.textContent = "";
 
   }
 
