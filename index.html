@@ -11,6 +11,7 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Italianno&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="css/styles.css">
+
   <style>
 
 /* ================================
@@ -30,7 +31,7 @@
 }
 
 
-/* Capa blanca */
+/* Capa blanca SOLO EN EDITORIAL Y CARTELES */
 
 .category-editorial::before,
 .category-carteles::before {
@@ -51,6 +52,9 @@
   font-size: 20px !important;
   font-weight: 600 !important;
   text-align: center !important;
+
+  /* Respeta los saltos de línea de data-title */
+  white-space: pre-line !important;
 
   opacity: 0 !important;
 
@@ -89,6 +93,8 @@
   background: rgba(255, 255, 255, 0.90) !important;
 
   padding: 40px !important;
+
+  box-sizing: border-box !important;
 
   z-index: 999999 !important;
 
@@ -151,7 +157,7 @@ body.gallery-modal-open {
 }
 
 </style>
-  
+
 </head>
 
 <body>
@@ -165,9 +171,9 @@ body.gallery-modal-open {
       <a href="#contacto">CONTACTO</a>
     </nav>
 
-   <a class="brand" href="#portfolio" aria-label="Laurablue">
-  <img src="images/logo.png" alt="Laurablue">
-</a>
+    <a class="brand" href="#portfolio" aria-label="Laurablue">
+      <img src="images/logo.png" alt="Laurablue">
+    </a>
 
   </header>
 
@@ -179,392 +185,436 @@ body.gallery-modal-open {
     <section id="portfolio" class="portfolio-page">
 
       <div class="hero-art">
-  <img src="images/IMG_8051.png" alt="Ilustración de Laurablue">
-</div>
+        <img src="images/IMG_8051.png" alt="Ilustración de Laurablue">
+      </div>
 
 
-   <nav class="category-nav" aria-label="Categorías del portfolio">
-  <a href="#" class="category-button active" data-category="ilustracion">
-    ILUSTRACIÓN
-  </a>
-     
-  <a href="#" class="category-button" data-category="editorial">
-    EDITORIAL
-  </a>
-     
-  <a href="#" class="category-button" data-category="carteles">
-    CARTELES
-  </a>
-     
-</nav>
+      <nav class="category-nav" aria-label="Categorías del portfolio">
+
+        <a href="#" class="category-button active" data-category="ilustracion">
+          ILUSTRACIÓN
+        </a>
+
+        <a href="#" class="category-button" data-category="editorial">
+          EDITORIAL
+        </a>
+
+        <a href="#" class="category-button" data-category="carteles">
+          CARTELES
+        </a>
+
+      </nav>
 
 
-<section class="gallery" id="portfolio-gallery" aria-label="Galería">
-
-  <!-- ILUSTRACIÓN -->
-
-<a class="gallery-item category-ilustracion" href="#">
-    <img src="images/IMG_8121.jpg" alt="Mujer lechuza">
-  </a>
-  
-  <a class="gallery-item category-ilustracion" href="#">
-    <img src="images/IMG_7344 (3).jpg" alt="Árbol">
-  </a>
-  
-  <a class="gallery-item category-ilustracion" href="#">
-    <img src="images/IMG_7853.jpg" alt="Niño en un árbol">
-  </a>
-  
-  <a class="gallery-item category-ilustracion" href="#">
-    <img src="images/IMG_8283.jpg" alt="Regando">
-  </a>
-  
-   <a class="gallery-item category-ilustracion" href="#">
-    <img src="images/IMG_7338 (3).jpg" alt="Lago">
-  </a>
-  
-    <a class="gallery-item category-ilustracion" href="#">
-    <img src="images/IMG_6641.jpg" alt="Cobain">
-  </a>
-
-   <a class="gallery-item category-ilustracion" href="#">
-    <img src="images/Postales_Lectura_4_page-0001.jpg" alt="Chica en el sofá">
-  </a>
-
-  <a class="gallery-item category-ilustracion" href="#">
-    <img src="images/IMG_8296.jpg" alt="Lluvia">
-  </a>
-  
-   <a class="gallery-item category-ilustracion" href="#">
-    <img src="images/Postales_Lectura_6_page-0001.jpg" alt="Niño y gato">
-  </a>
-
-  
-  <a class="gallery-item category-ilustracion" href="#">
-    <img src="images/IMG_8262.jpg" alt="Casper">
-  </a>
-
-   <a class="gallery-item category-ilustracion" href="#">
-    <img src="images/Postales_Lectura_7_page-0001.jpg" alt="Pájaro">
-  </a>
-  
-  <!-- EDITORIAL -->
-
- <a class="gallery-item category-editorial" href="#"
-       data-title="Portada ficticia para «Alicia en el País de las Maravillas»">
-    <img src="images/IMG_8306.jpg" alt="Portada ficticia para "Alicia en el País de las Maravillas"">
-  </a>
-
-  <a class="gallery-item item-large category-editorial" href="#"
-    data-title="Mini-cómic para Liana Editorial">
-    <img src="images/IMG_7359.jpg" alt="Mini-cómic para Liana Editorial">
-  </a>
-  
-  <a class="gallery-item category-editorial" href="#"
-         data-title="Portada ficticia para «El Principito»>
-    <img src="images/IMG_6884.jpg" alt="Portada ficticia para "El Principito"">
-  </a>
-
-  <a class="gallery-item category-editorial" href="#"
-         data-title="Proyecto ficticio de
-    «Tras la sombra de Lautrec»>
-    <img src="images/TrasLaSombraDeLautrec_Portada3.jpg" alt="Proyecto ficticio de «Tras la sombra de Lautrec"">
-  </a>
-
-  <a class="gallery-item category-editorial" href="#"
-      data-title="Portada para TFG de novela ilustrada de 
-    «El Hogar de Miss Peregrine para Niños Peculiares»">
-    <img src="images/MISSPEREGRINE_CUBIERTA_FINAL.jpg" alt="Portada para TFG de novela ilustrada de «El Hogar de Miss Peregrine para Niños Peculiares"">
-  </a>
-  
-
-  <!-- CARTELES -->
-
-  <a class="gallery-item item-large category-carteles" href="#"
-     data-title="Propuesta de cartel para 
-    el 10º Festival de Cine de Santander">
-    <img src="images/Cartel Festival Cine Santander_Laura Ferrer.jpg" alt="Propuesta de cartel para el 10º Festival de Cine de Santander">
-  </a>
-
-  <a class="gallery-item category-carteles" href="#"
-    data-title="Propuesta de cartel para el 
-    Día Internacional de las Personas con Discapacidad">
-    <img src="images/Cartel_Día Internacional de las Personas con Discapacidad6.jpg" alt="Propuesta de cartel para el Día Internacional de las Personas con Discapacidad">
-  </a>
-
-  <a class="gallery-item category-carteles" href="#"
-       data-title="Cartel oficial Festival ParlaCuenta 2026">
-    <img src="images/IMG_8228.jpg" alt="Cartel oficial Festival ParlaCuenta 2026">
-  </a>
-
-  <a class="gallery-item category-carteles" href="#"
-       data-title="Cartel no oficial del Día del Libro 2026">
-    <img src="images/DÍA DEL LIBRO 2026_1.jpg" alt="Cartel no oficial del Día del Libro 2026">
-  </a>
-  
- <a class="gallery-item category-carteles" href="#"
-       data-title="Cartel oficial Festival ParlaCuenta 2023">
-    <img src="images/Cartel_Parlacuenta_ (1).jpg" alt="Cartel oficial Festival ParlaCuenta 2023">
-  </a>
-
-</section>
+      <section class="gallery" id="portfolio-gallery" aria-label="Galería">
 
 
-    <!-- TIENDA -->
+        <!-- ILUSTRACIÓN -->
 
-<section id="tienda" class="shop-page">
+        <a class="gallery-item category-ilustracion" href="#">
+          <img src="images/IMG_8121.jpg" alt="Mujer lechuza">
+        </a>
 
-  <div class="shop-inner">
+        <a class="gallery-item category-ilustracion" href="#">
+          <img src="images/IMG_7344 (3).jpg" alt="Árbol">
+        </a>
 
-    <p class="eyebrow">TIENDA</p>
+        <a class="gallery-item category-ilustracion" href="#">
+          <img src="images/IMG_7853.jpg" alt="Niño en un árbol">
+        </a>
 
-    <h1>
-      Llévate <em>arte</em> a casa
-    </h1>
+        <a class="gallery-item category-ilustracion" href="#">
+          <img src="images/IMG_8283.jpg" alt="Regando">
+        </a>
 
-    <p class="shop-intro">
-      Puedes encontrar una selección de mis ilustraciones en puntos
-      de venta físicos y en ferias. También puedes encontrar mis camisetas online.
-    </p>
+        <a class="gallery-item category-ilustracion" href="#">
+          <img src="images/IMG_7338 (3).jpg" alt="Lago">
+        </a>
 
+        <a class="gallery-item category-ilustracion" href="#">
+          <img src="images/IMG_6641.jpg" alt="Cobain">
+        </a>
 
-    <div class="shop-grid">
+        <a class="gallery-item category-ilustracion" href="#">
+          <img src="images/Postales_Lectura_4_page-0001.jpg" alt="Chica en el sofá">
+        </a>
 
-      <!-- PUNTO DE VENTA FÍSICO -->
+        <a class="gallery-item category-ilustracion" href="#">
+          <img src="images/IMG_8296.jpg" alt="Lluvia">
+        </a>
 
-      <a
-        class="shop-card"
-        href="https://www.google.com/maps/place//data=!4m2!3m1!1s0xd41f533b61dcfcd:0x51773d000639870e?sa=X&ved=1t:8290&ictx=111"
-      >
+        <a class="gallery-item category-ilustracion" href="#">
+          <img src="images/Postales_Lectura_6_page-0001.jpg" alt="Niño y gato">
+        </a>
 
-        <div class="shop-image">
-  <img
-    src="images/WhatsApp Image 2026-09-30 at 20.25.29 (2).jpeg"
-    alt="La Librería de Alicia"
-  >
+        <a class="gallery-item category-ilustracion" href="#">
+          <img src="images/IMG_8262.jpg" alt="Casper">
+        </a>
 
-  <img
-    class="shop-image-hover"
-    src="images/WhatsApp Image 2026-09-30 at 20.25.29 (1).jpeg"
-    alt=""
-  >
-</div>
-
-        <div class="shop-info">
-
-          <p class="shop-type">
-            PUNTO DE VENTA
-          </p>
-
-          <h2>
-            La Librería de Alicia
-          </h2>
-
-          <p>
-            Parla, Madrid
-          </p>
-
-          <span class="C. Río Guadiana, 28980 Parla, Madrid">
-            VER UBICACIÓN ↗
-          </span>
-
-        </div>
-
-      </a>
+        <a class="gallery-item category-ilustracion" href="#">
+          <img src="images/Postales_Lectura_7_page-0001.jpg" alt="Pájaro">
+        </a>
 
 
-      <!-- CAMISETA -->
+        <!-- EDITORIAL -->
 
-      <a
-        class="shop-card"
-        href="https://kamicustom.com/products/la-naturaleza-no-tiene-prisa-laurablue-camiseta?variant=54257669669205"
-        target="_blank"
-        rel="noopener"
-      >
+        <a class="gallery-item category-editorial" href="#"
+           data-title="Portada ficticia para
+«Alicia en el País de las Maravillas»">
+          <img
+            src="images/IMG_8306.jpg"
+            alt="Portada ficticia para Alicia en el País de las Maravillas">
+        </a>
 
-            <div class="shop-image">
-  <img
-    src="images/MK01.jpg"
-    alt="Camiseta con diseño de Laurablue"
-  >
+        <a class="gallery-item item-large category-editorial" href="#"
+           data-title="Mini-cómic para
+Liana Editorial">
+          <img
+            src="images/IMG_7359.jpg"
+            alt="Mini-cómic para Liana Editorial">
+        </a>
 
-  <img
-    class="shop-image-hover"
-    src="images/POST01_c235d721-603d-4625-a91b-388540b6340a.jpg"
-    alt=""
-  >
-</div>
-        
+        <a class="gallery-item category-editorial" href="#"
+           data-title="Portada ficticia para
+«El Principito»">
+          <img
+            src="images/IMG_6884.jpg"
+            alt="Portada ficticia para El Principito">
+        </a>
 
-        <div class="shop-info">
+        <a class="gallery-item category-editorial" href="#"
+           data-title="Proyecto ficticio de
+«Tras la sombra de Lautrec»">
+          <img
+            src="images/TrasLaSombraDeLautrec_Portada3.jpg"
+            alt="Proyecto ficticio de Tras la sombra de Lautrec">
+        </a>
 
-          <p class="shop-type">
-            CAMISETA
-          </p>
-
-          <h2>
-            La naturaleza no tiene prisa
-          </h2>
-
-          <p>
-            Disponible online en Kami Custom
-          </p>
-
-          <span class="https://kamicustom.com/products/la-naturaleza-no-tiene-prisa-laurablue-camiseta?variant=54257669669205">
-            VER / COMPRAR ↗
-          </span>
-
-        </div>
-
-      </a>
-
-    </div>
-
-  </div>
-
-</section>
+        <a class="gallery-item category-editorial" href="#"
+           data-title="Portada para TFG de novela ilustrada de
+«El Hogar de Miss Peregrine para Niños Peculiares»">
+          <img
+            src="images/MISSPEREGRINE_CUBIERTA_FINAL.jpg"
+            alt="Portada para TFG de novela ilustrada de El Hogar de Miss Peregrine para Niños Peculiares">
+        </a>
 
 
-    <!-- SOBRE MÍ -->
+        <!-- CARTELES -->
 
-    <section id="sobre-mi" class="about-page">
+        <a class="gallery-item item-large category-carteles" href="#"
+           data-title="Propuesta de cartel para
+el 10º Festival de Cine de Santander">
+          <img
+            src="images/Cartel Festival Cine Santander_Laura Ferrer.jpg"
+            alt="Propuesta de cartel para el 10º Festival de Cine de Santander">
+        </a>
 
-      <div class="about-inner">
+        <a class="gallery-item category-carteles" href="#"
+           data-title="Propuesta de cartel para el
+Día Internacional de las Personas con Discapacidad">
+          <img
+            src="images/Cartel_Día Internacional de las Personas con Discapacidad6.jpg"
+            alt="Propuesta de cartel para el Día Internacional de las Personas con Discapacidad">
+        </a>
 
-        <div class="about-copy">
+        <a class="gallery-item category-carteles" href="#"
+           data-title="Cartel oficial Festival ParlaCuenta 2026">
+          <img
+            src="images/IMG_8228.jpg"
+            alt="Cartel oficial Festival ParlaCuenta 2026">
+        </a>
+
+        <a class="gallery-item category-carteles" href="#"
+           data-title="Cartel no oficial del Día del Libro 2026">
+          <img
+            src="images/DÍA DEL LIBRO 2026_1.jpg"
+            alt="Cartel no oficial del Día del Libro 2026">
+        </a>
+
+        <a class="gallery-item category-carteles" href="#"
+           data-title="Cartel oficial Festival ParlaCuenta 2023">
+          <img
+            src="images/Cartel_Parlacuenta_ (1).jpg"
+            alt="Cartel oficial Festival ParlaCuenta 2023">
+        </a>
+
+      </section>
+
+
+      <!-- TIENDA -->
+
+      <section id="tienda" class="shop-page">
+
+        <div class="shop-inner">
+
+          <p class="eyebrow">TIENDA</p>
 
           <h1>
-            Hola! <span>❀</span>
+            Llévate <em>arte</em> a casa
           </h1>
 
-          <p>
-           Soy Laurablue, una ilustradora infantil y juvenil de Madrid. 
+          <p class="shop-intro">
+            Puedes encontrar una selección de mis ilustraciones en puntos
+            de venta físicos y en ferias. También puedes encontrar mis camisetas online.
           </p>
 
-          <p>
-            Desde 2018 comparto mis ilustraciones en Instagram. 
-            En 2025 me gradué en Ilustración en la Escuela Artediez y, 
-            sin dejar nunca de aprender, ese mismo año comencé la carrera 
-            de Historia del Arte. 
 
-          </p>
+          <div class="shop-grid">
 
-          <p>
-           Suelo trabajar con paletas de colores suaves y luces cálidas que 
-           evocan cierta nostalgia, combinando la técnica digital con un 
-           acabado inspirado en las técnicas tradicionales.
 
-          </p>
+            <!-- PUNTO DE VENTA FÍSICO -->
 
-          <p>
-           Me encanta narrar historias y plasmar sentimientos mediante mis ilustraciones.
-          </p>
+            <a
+              class="shop-card"
+              href="https://www.google.com/maps/place//data=!4m2!3m1!1s0xd41f533b61dcfcd:0x51773d000639870e?sa=X&ved=1t:8290&ictx=111"
+            >
 
-          <p>
-           Por ello, suelo centrarme en la introspección y la ternura de lo cotidiano, 
-            especialmente en el vínculo con la naturaleza y la compañía de los animales.
+              <div class="shop-image">
 
-          </p>
+                <img
+                  src="images/WhatsApp Image 2026-09-30 at 20.25.29 (2).jpeg"
+                  alt="La Librería de Alicia"
+                >
+
+                <img
+                  class="shop-image-hover"
+                  src="images/WhatsApp Image 2026-09-30 at 20.25.29 (1).jpeg"
+                  alt=""
+                >
+
+              </div>
+
+              <div class="shop-info">
+
+                <p class="shop-type">
+                  PUNTO DE VENTA
+                </p>
+
+                <h2>
+                  La Librería de Alicia
+                </h2>
+
+                <p>
+                  Parla, Madrid
+                </p>
+
+                <span class="C. Río Guadiana, 28980 Parla, Madrid">
+                  VER UBICACIÓN ↗
+                </span>
+
+              </div>
+
+            </a>
+
+
+            <!-- CAMISETA -->
+
+            <a
+              class="shop-card"
+              href="https://kamicustom.com/products/la-naturaleza-no-tiene-prisa-laurablue-camiseta?variant=54257669669205"
+              target="_blank"
+              rel="noopener"
+            >
+
+              <div class="shop-image">
+
+                <img
+                  src="images/MK01.jpg"
+                  alt="Camiseta con diseño de Laurablue"
+                >
+
+                <img
+                  class="shop-image-hover"
+                  src="images/POST01_c235d721-603d-4625-a91b-388540b6340a.jpg"
+                  alt=""
+                >
+
+              </div>
+
+              <div class="shop-info">
+
+                <p class="shop-type">
+                  CAMISETA
+                </p>
+
+                <h2>
+                  La naturaleza no tiene prisa
+                </h2>
+
+                <p>
+                  Disponible online en Kami Custom
+                </p>
+
+                <span class="https://kamicustom.com/products/la-naturaleza-no-tiene-prisa-laurablue-camiseta?variant=54257669669205">
+                  VER / COMPRAR ↗
+                </span>
+
+              </div>
+
+            </a>
+
+          </div>
 
         </div>
 
-<div class="portrait">
-  <img src="images/IMG_8099.jpg" alt="Laurablue">
-</div>
-
-      </div>
-
-    </section>
+      </section>
 
 
-    <!-- CONTACTO -->
+      <!-- SOBRE MÍ -->
 
-    <section id="contacto" class="contact-page">
+      <section id="sobre-mi" class="about-page">
 
-      <div class="contact-inner">
+        <div class="about-inner">
 
-        <div class="contact-illustration">
+          <div class="about-copy">
 
-          <img
-            src="images/IMG_8210.png"
-            alt="Ilustración de Laurablue"
+            <h1>
+              Hola! <span>❀</span>
+            </h1>
+
+            <p>
+              Soy Laurablue, una ilustradora infantil y juvenil de Madrid.
+            </p>
+
+            <p>
+              Desde 2018 comparto mis ilustraciones en Instagram.
+              En 2025 me gradué en Ilustración en la Escuela Artediez y,
+              sin dejar nunca de aprender, ese mismo año comencé la carrera
+              de Historia del Arte.
+            </p>
+
+            <p>
+              Suelo trabajar con paletas de colores suaves y luces cálidas que
+              evocan cierta nostalgia, combinando la técnica digital con un
+              acabado inspirado en las técnicas tradicionales.
+            </p>
+
+            <p>
+              Me encanta narrar historias y plasmar sentimientos mediante mis ilustraciones.
+            </p>
+
+            <p>
+              Por ello, suelo centrarme en la introspección y la ternura de lo cotidiano,
+              especialmente en el vínculo con la naturaleza y la compañía de los animales.
+            </p>
+
+          </div>
+
+          <div class="portrait">
+            <img src="images/IMG_8099.jpg" alt="Laurablue">
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- CONTACTO -->
+
+      <section id="contacto" class="contact-page">
+
+        <div class="contact-inner">
+
+          <div class="contact-illustration">
+
+            <img
+              src="images/IMG_8210.png"
+              alt="Ilustración de Laurablue"
+            >
+
+          </div>
+
+
+          <form
+            class="contact-form"
+            id="contactForm"
+            action="https://formsubmit.co/422d6a437c0d3cb008862ccf4aebfbcd"
+            method="POST"
           >
 
+            <input
+              type="hidden"
+              name="_subject"
+              value="Nuevo mensaje desde la web de Laurablue"
+            >
+
+            <input
+              type="hidden"
+              name="_template"
+              value="table"
+            >
+
+            <div class="field-row">
+
+              <label>
+                Nombre <span>*</span>
+
+                <input
+                  type="text"
+                  name="nombre"
+                  required
+                >
+
+              </label>
+
+              <label>
+                Apellidos <span>*</span>
+
+                <input
+                  type="text"
+                  name="apellidos"
+                  required
+                >
+
+              </label>
+
+            </div>
+
+
+            <label>
+              Email <span>*</span>
+
+              <input
+                type="email"
+                name="email"
+                autocomplete="off"
+                required
+              >
+
+            </label>
+
+
+            <label>
+              Mensaje <span>*</span>
+
+              <textarea
+                name="mensaje"
+                required
+              ></textarea>
+
+            </label>
+
+
+            <button type="submit">
+              Enviar
+            </button>
+
+
+            <p class="form-note" id="formNote">
+              Gracias por escribirme. Te responderé lo antes posible.
+            </p>
+
+            <input
+              type="hidden"
+              name="_replyto"
+              value=""
+            >
+
+          </form>
+
         </div>
 
-<form
-  class="contact-form"
-  id="contactForm"
-  action="https://formsubmit.co/422d6a437c0d3cb008862ccf4aebfbcd"
-  method="POST"
->
-
-  <input
-    type="hidden"
-    name="_subject"
-    value="Nuevo mensaje desde la web de Laurablue"
-  >
-
-  <input
-    type="hidden"
-    name="_template"
-    value="table"
-  >
-
-  <div class="field-row">
-
-    <label>
-      Nombre <span>*</span>
-      <input
-        type="text"
-        name="nombre"
-        required
-      >
-    </label>
-
-    <label>
-      Apellidos <span>*</span>
-      <input
-        type="text"
-        name="apellidos"
-        required
-      >
-    </label>
-
-  </div>
-
-<label>
-  Email <span>*</span>
-  <input
-    type="email"
-    name="email"
-    autocomplete="off"
-    required
-  >
-</label>
-
-
-  <label>
-    Mensaje <span>*</span>
-    <textarea
-      name="mensaje"
-      required
-    ></textarea>
-  </label>
-
-  <button type="submit">
-    Enviar
-  </button>
-
-  <p class="form-note" id="formNote">
-    Gracias por escribirme. Te responderé lo antes posible.
-  </p>
-
-  <input type="hidden" name="_replyto" value="">
-  
-</form>
-
-      </div>
+      </section>
 
     </section>
 
@@ -572,234 +622,372 @@ body.gallery-modal-open {
 
 
   <!-- FOOTER -->
-  
-<footer>
 
-  <div class="footer-email">
-    laurablue.illustration@gmail.com
-  </div>
+  <footer>
 
-  <div class="socials">
-    <a href="https://www.instagram.com/__laurablue/" target="_blank" rel="noopener">Instagram</a>
-    <a href="https://www.behance.net/__laurablue" aria-label="Behance">Behance</a>
-    <a href="https://www.threads.com/@__laurablue" aria-label="Threads">Threads</a>
-  </div>
+    <div class="footer-email">
+      laurablue.illustration@gmail.com
+    </div>
 
-  <div class="footer-credits">
-    <span>©2026 Laurablue</span>
-    <span>·</span>
-    <span>Política de privacidad</span>
-  </div>
+    <div class="socials">
 
-</footer>
+      <a
+        href="https://www.instagram.com/__laurablue/"
+        target="_blank"
+        rel="noopener"
+      >
+        Instagram
+      </a>
 
-<script src="js/script.js"></script>
+      <a
+        href="https://www.behance.net/__laurablue"
+        aria-label="Behance"
+      >
+        Behance
+      </a>
 
-<script>
-document.addEventListener('DOMContentLoaded', function() {
+      <a
+        href="https://www.threads.com/@__laurablue"
+        aria-label="Threads"
+      >
+        Threads
+      </a>
 
-  const categoryButtons = document.querySelectorAll('.category-button');
-  const galleryItems = document.querySelectorAll('.gallery-item');
+    </div>
 
-  /* Mostrar ILUSTRACIÓN al entrar */
-  galleryItems.forEach(function(item) {
-    if (item.classList.contains('category-ilustracion')) {
-      item.style.display = 'block';
-      item.classList.add('is-visible');
-    } else {
-      item.style.display = 'none';
-    }
-  });
+    <div class="footer-credits">
 
+      <span>©2026 Laurablue</span>
+      <span>·</span>
+      <span>Política de privacidad</span>
 
-  /* Cambiar de categoría */
-  categoryButtons.forEach(function(button) {
+    </div>
 
-    button.addEventListener('click', function(event) {
-
-      event.preventDefault();
-
-      const category = button.dataset.category;
-
-      /* Cambiar botón activo */
-      categoryButtons.forEach(function(btn) {
-        btn.classList.remove('active');
-      });
-
-      button.classList.add('active');
+  </footer>
 
 
-      /* Cambiar imágenes */
-      galleryItems.forEach(function(item) {
+  <script src="js/script.js"></script>
 
-        if (item.classList.contains('category-' + category)) {
 
-          item.style.display = 'block';
+  <!-- ================================
+       CATEGORÍAS DEL PORTFOLIO
+  ================================= -->
 
-          setTimeout(function() {
-            item.classList.add('is-visible');
-          }, 50);
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
 
-        } else {
+    const categoryButtons =
+      document.querySelectorAll('.category-button');
 
-          item.style.display = 'none';
-          item.classList.remove('is-visible');
+    const galleryItems =
+      document.querySelectorAll('.gallery-item');
 
-        }
+
+    /* Mostrar ILUSTRACIÓN al entrar */
+
+    galleryItems.forEach(function(item) {
+
+      if (item.classList.contains('category-ilustracion')) {
+
+        item.style.display = 'block';
+        item.classList.add('is-visible');
+
+      } else {
+
+        item.style.display = 'none';
+
+      }
+
+    });
+
+
+    /* Cambiar de categoría */
+
+    categoryButtons.forEach(function(button) {
+
+      button.addEventListener('click', function(event) {
+
+        event.preventDefault();
+
+        const category =
+          button.dataset.category;
+
+
+        /* Cambiar botón activo */
+
+        categoryButtons.forEach(function(btn) {
+          btn.classList.remove('active');
+        });
+
+        button.classList.add('active');
+
+
+        /* Cambiar imágenes */
+
+        galleryItems.forEach(function(item) {
+
+          if (
+            item.classList.contains(
+              'category-' + category
+            )
+          ) {
+
+            item.style.display = 'block';
+
+            setTimeout(function() {
+              item.classList.add('is-visible');
+            }, 50);
+
+          } else {
+
+            item.style.display = 'none';
+            item.classList.remove('is-visible');
+
+          }
+
+        });
 
       });
 
     });
 
   });
-
-});
-</script>
-
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-
-  const galleryItems = document.querySelectorAll(".gallery-item");
+  </script>
 
 
-  /* =================================
-     CREAR EL TEXTO DEL HOVER
-  ================================= */
+  <!-- ================================
+       VISOR DE IMÁGENES
+  ================================= -->
 
-  galleryItems.forEach(function (item) {
+  <script>
+  document.addEventListener("DOMContentLoaded", function () {
 
-    const image = item.querySelector("img");
-
-    if (!image) return;
-
-   if (!item.hasAttribute("data-title")) {
-  item.setAttribute("data-title", image.alt);
-}
+    const galleryItems =
+      document.querySelectorAll(".gallery-item");
 
 
     /* =================================
-       ABRIR IMAGEN
+       CREAR EL TEXTO DEL HOVER
     ================================= */
 
-    item.addEventListener("click", function (event) {
+    galleryItems.forEach(function (item) {
 
-      event.preventDefault();
-      event.stopPropagation();
+      const image =
+        item.querySelector("img");
 
-      openImage(image);
+      if (!image) return;
+
+
+      /* Si no hay un título personalizado,
+         utiliza el alt */
+
+      if (!item.hasAttribute("data-title")) {
+
+        item.setAttribute(
+          "data-title",
+          image.alt
+        );
+
+      }
+
+
+      /* =================================
+         ABRIR IMAGEN
+      ================================= */
+
+      item.addEventListener(
+        "click",
+        function (event) {
+
+          event.preventDefault();
+          event.stopPropagation();
+
+          openImage(image);
+
+        }
+      );
 
     });
 
-  });
+
+    /* =================================
+       CREAR VENTANA
+    ================================= */
+
+    const modal =
+      document.createElement("div");
+
+    modal.className =
+      "gallery-modal";
 
 
-  /* =================================
-     CREAR VENTANA
-  ================================= */
+    modal.innerHTML = `
+      <button
+        class="gallery-modal-close"
+        type="button"
+        aria-label="Cerrar">
+        ×
+      </button>
 
-  const modal = document.createElement("div");
-
-  modal.className = "gallery-modal";
-
-modal.innerHTML = `
-  <button
-    class="gallery-modal-close"
-    type="button"
-    aria-label="Cerrar">
-    ×
-  </button>
-
-  <img
-    class="gallery-modal-image"
-    src=""
-    alt="">
-`;
-
-  document.body.appendChild(modal);
-
-  const closeButton =
-    modal.querySelector(".gallery-modal-close");
+      <img
+        class="gallery-modal-image"
+        src=""
+        alt="">
+    `;
 
 
-  /* =================================
-     ABRIR
-  ================================= */
-
-  function openImage(image) {
-
-  modalImage.src = image.src;
-  modalImage.alt = image.alt;
-
-  modal.classList.add("is-open");
-
-  document.body.classList.add("gallery-modal-open");
-
-}
+    document.body.appendChild(modal);
 
 
-  /* =================================
-     CERRAR
-  ================================= */
-
-  function closeImage() {
-
-    modal.classList.remove("is-open");
-
-    document.body.classList.remove("gallery-modal-open");
-
-  modalImage.src = "";
-
-  }
+    const modalImage =
+      modal.querySelector(
+        ".gallery-modal-image"
+      );
 
 
-  closeButton.addEventListener("click", function (event) {
-
-    event.preventDefault();
-
-    closeImage();
-
-  });
+    const closeButton =
+      modal.querySelector(
+        ".gallery-modal-close"
+      );
 
 
-  /* Cerrar haciendo clic en el fondo */
+    /* =================================
+       ABRIR
+    ================================= */
 
-  modal.addEventListener("click", function (event) {
+    function openImage(image) {
 
-    if (event.target === modal) {
-      closeImage();
+      modalImage.src =
+        image.src;
+
+      modalImage.alt =
+        image.alt;
+
+      modal.classList.add(
+        "is-open"
+      );
+
+      document.body.classList.add(
+        "gallery-modal-open"
+      );
+
     }
 
-  });
 
+    /* =================================
+       CERRAR
+    ================================= */
 
-  /* Cerrar con ESC */
+    function closeImage() {
 
-  document.addEventListener("keydown", function (event) {
+      modal.classList.remove(
+        "is-open"
+      );
 
-    if (event.key === "Escape") {
-      closeImage();
+      document.body.classList.remove(
+        "gallery-modal-open"
+      );
+
+      modalImage.src = "";
+
     }
 
+
+    /* =================================
+       BOTÓN CERRAR
+    ================================= */
+
+    closeButton.addEventListener(
+      "click",
+      function (event) {
+
+        event.preventDefault();
+        event.stopPropagation();
+
+        closeImage();
+
+      }
+    );
+
+
+    /* =================================
+       CERRAR HACIENDO CLIC EN EL FONDO
+    ================================= */
+
+    modal.addEventListener(
+      "click",
+      function (event) {
+
+        if (event.target === modal) {
+          closeImage();
+        }
+
+      }
+    );
+
+
+    /* =================================
+       CERRAR CON ESC
+    ================================= */
+
+    document.addEventListener(
+      "keydown",
+      function (event) {
+
+        if (event.key === "Escape") {
+          closeImage();
+        }
+
+      }
+    );
+
   });
+  </script>
 
-});
-</script>
 
-<script>
-document.addEventListener("DOMContentLoaded", function () {
+  <!-- ================================
+       FORMULARIO DE CONTACTO
+  ================================= -->
 
-  const form = document.getElementById("contactForm");
-  const email = document.getElementById("email");
-  const replyTo = document.getElementById("replyTo");
+  <script>
+  document.addEventListener(
+    "DOMContentLoaded",
+    function () {
 
-  if (!form || !email || !replyTo) return;
+      const form =
+        document.getElementById(
+          "contactForm"
+        );
 
-  form.addEventListener("submit", function () {
-    replyTo.value = email.value;
-  });
+      const email =
+        document.getElementById(
+          "email"
+        );
 
-});
-</script>
-  
+      const replyTo =
+        document.getElementById(
+          "replyTo"
+        );
+
+
+      if (!form || !email || !replyTo) {
+        return;
+      }
+
+
+      form.addEventListener(
+        "submit",
+        function () {
+
+          replyTo.value =
+            email.value;
+
+        }
+      );
+
+    }
+  );
+  </script>
+
 </body>
 </html>
