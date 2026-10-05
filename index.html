@@ -702,7 +702,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
   modal.className = "gallery-modal";
 
-  modal.innerHTML = `
+ modal.innerHTML = `
+  <div class="gallery-modal-content">
+
     <button
       class="gallery-modal-close"
       type="button"
@@ -714,13 +716,20 @@ document.addEventListener("DOMContentLoaded", function () {
       class="gallery-modal-image"
       src=""
       alt="">
-  `;
+
+    <p class="gallery-modal-title"></p>
+
+  </div>
+`;
 
   document.body.appendChild(modal);
 
 
   const modalImage =
     modal.querySelector(".gallery-modal-image");
+
+  const modalTitle =
+  modal.querySelector(".gallery-modal-title");
 
   const closeButton =
     modal.querySelector(".gallery-modal-close");
@@ -732,14 +741,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function openImage(image) {
 
-    modalImage.src = image.src;
-    modalImage.alt = image.alt;
+  modalImage.src = image.src;
+  modalImage.alt = image.alt;
 
-    modal.classList.add("is-open");
+  const item = image.closest(".gallery-item");
 
-    document.body.classList.add("gallery-modal-open");
-
+  if (item) {
+    modalTitle.textContent =
+      item.getAttribute("data-title") || image.alt;
   }
+
+  modal.classList.add("is-open");
+
+  document.body.classList.add("gallery-modal-open");
+
+}
 
 
   /* =================================
@@ -752,7 +768,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     document.body.classList.remove("gallery-modal-open");
 
-    modalImage.src = "";
+  modalImage.src = "";
+  modalTitle.textContent = "";
 
   }
 
