@@ -1199,5 +1199,111 @@ body.gallery-modal-open{
   overflow:hidden;
 }
 
-  
+  /* =========================================
+   VERSIÓN MÓVIL
+========================================= */
+
+@media (max-width: 700px) {
+
+  /* LOGO CENTRADO */
+
+  .topbar {
+    position: relative;
+  }
+
+  .brand {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+
+  /* BANNER DE ILUSTRACIÓN */
+
+  .hero-art {
+    height: auto;
+    max-height: none;
+    overflow: hidden;
+  }
+
+  .hero-art img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+
+  /* EVITAR ANCHO EXTRA Y ESPACIOS LATERALES */
+
+  html,
+  body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  main,
+  section {
+    width: 100%;
+    max-width: 100%;
+  }
+
+
+  /* SOBRE MÍ CENTRADO */
+
+  .about-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .about-copy {
+    width: 100%;
+    max-width: 600px;
+  }
+
+  .portrait {
+    width: 80%;
+    max-width: 400px;
+    margin: 30px auto 0;
+  }
+
+  .portrait img {
+    width: 100%;
+    height: auto;
+  }
+
+
+  /* GALERÍA */
+
+  .gallery-item {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /*
+     En móvil NO mostramos el hover:
+     ni capa blanca ni título.
+  */
+
+  .gallery-item::before,
+  .gallery-item::after {
+    display: none !important;
+  }
+
+
+  /* VENTANA DE IMAGEN */
+
+  .gallery-modal {
+    padding: 20px !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  .gallery-modal-image {
+    max-width: 90vw !important;
+    max-height: 75vh !important;
+  }
+
+}
  
