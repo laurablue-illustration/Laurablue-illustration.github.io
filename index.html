@@ -717,9 +717,6 @@ modal.innerHTML = `
 
   document.body.appendChild(modal);
 
-  const modalTitle =
-  modal.querySelector(".gallery-modal-title");
-
   const closeButton =
     modal.querySelector(".gallery-modal-close");
 
@@ -732,8 +729,6 @@ modal.innerHTML = `
 
   modalImage.src = image.src;
   modalImage.alt = image.alt;
-
-  const item = image.closest(".gallery-item");
 
   modal.classList.add("is-open");
 
