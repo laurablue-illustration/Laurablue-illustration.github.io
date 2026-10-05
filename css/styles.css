@@ -1056,25 +1056,36 @@ footer{
   transition:transform .3s ease;
 }
 
-.gallery-item::after{
-  content:"";
+.category-editorial::after,
+.category-carteles::after{
+  content:"VER IMAGEN";
 
-  position:absolute;
-  inset:0;
+  position:absolute !important;
+  inset:0 !important;
 
-  background:rgba(255,255,255,.78);
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
 
-  opacity:0;
+  background:rgba(255,255,255,.8) !important;
 
-  z-index:2;
+  color:#f5b5ac !important;
 
-  pointer-events:none;
+  font-size:18px !important;
+  font-weight:600 !important;
 
-  transition:opacity .25s ease;
+  opacity:0 !important;
+
+  pointer-events:none !important;
+
+  z-index:999 !important;
+
+  transition:opacity .3s ease !important;
 }
 
-.gallery-item:hover::after{
-  opacity:1;
+.category-editorial:hover::after,
+.category-carteles:hover::after{
+  opacity:1 !important;
 }
 
 
