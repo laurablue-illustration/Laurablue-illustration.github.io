@@ -32,7 +32,8 @@
 
 /* Capa blanca */
 
-.gallery-item::before {
+.category-editorial::before,
+.category-carteles::before {
   content: attr(data-title);
 
   position: absolute !important;
@@ -44,7 +45,7 @@
 
   background: rgba(255, 255, 255, 0.75) !important;
 
-color: #707c28 !important;
+  color: #707c28 !important;
 
   font-family: "DM Sans", Arial, sans-serif !important;
   font-size: 20px !important;
@@ -60,7 +61,8 @@ color: #707c28 !important;
   transition: opacity .25s ease !important;
 }
 
-.gallery-item:hover::before {
+.category-editorial:hover::before,
+.category-carteles:hover::before {
   opacity: 1 !important;
 }
 
@@ -671,7 +673,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (!image) return;
 
-    item.setAttribute("data-title", image.alt);
+   if (!item.hasAttribute("data-title")) {
+  item.setAttribute("data-title", image.alt);
+}
 
 
     /* =================================
