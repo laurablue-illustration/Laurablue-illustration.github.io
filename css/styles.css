@@ -1093,7 +1093,8 @@ footer{
    TEXTO SOBRE LA IMAGEN
 ======================================== */
 
-.gallery-item::before{
+.category-editorial::before,
+.category-carteles::before{
   content:attr(data-title);
 
   position:absolute;
@@ -1121,10 +1122,10 @@ footer{
   transition:opacity .25s ease;
 }
 
-.gallery-item:hover::before{
+.category-editorial:hover::before,
+.category-carteles:hover::before{
   opacity:1;
 }
-
 
 /* ========================================
    VENTANA DE IMAGEN GRANDE
