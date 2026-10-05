@@ -907,10 +907,22 @@ footer .socials a{
   }
 
 
-  .hero-art{
-    height:58vw;
-    min-height:280px;
+ .hero-art {
+    height: 180px !important;
+    min-height: 180px !important;
+    max-height: 180px !important;
+    overflow: hidden !important;
   }
+
+  .hero-art img {
+    width: 100% !important;
+    height: 100% !important;
+    max-height: none !important;
+    object-fit: cover !important;
+    display: block !important;
+  }
+
+}
 
 
   .category-nav{
