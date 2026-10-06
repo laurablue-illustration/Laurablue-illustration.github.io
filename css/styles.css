@@ -863,84 +863,78 @@ footer .socials a{
 @media(max-width:800px){
 
   .gallery{
-  column-count:2;
-  column-gap:10px;
-}
+    column-count:2;
+    column-gap:10px;
+  }
 
-.gallery-item{
-  margin-bottom:10px;
-}
+  .gallery-item{
+    margin-bottom:10px;
+  }
 
   .topbar{
     height:82px;
-
     padding:0 20px;
-
     grid-template-columns:1fr auto;
   }
 
-
   .main-nav{
     gap:14px;
-
     grid-column:1/-1;
     grid-row:2;
-
     display:none;
   }
-
 
   .brand{
     width:145px;
     height:55px;
   }
 
-
   .brand img{
     width:125px;
     max-height:45px;
   }
-
 
   .login{
     display:none;
   }
 
 
- .hero-art {
-    height: 180px !important;
-    min-height: 180px !important;
-    max-height: 180px !important;
-    overflow: hidden !important;
+  /* BANNER */
+
+  .hero-art{
+    height:180px !important;
+    min-height:180px !important;
+    max-height:180px !important;
+    overflow:hidden !important;
   }
 
-  .hero-art img {
-    width: 100% !important;
-    height: 100% !important;
-    max-height: none !important;
-    object-fit: cover !important;
-    display: block !important;
+  .hero-art img{
+    width:100% !important;
+    height:100% !important;
+    max-height:none !important;
+    object-fit:cover !important;
+    display:block !important;
   }
 
-}
 
+  /* CATEGORÍAS */
 
   .category-nav{
     gap:25px;
     padding:28px 12px;
   }
 
-
   .category-nav a{
     font-size:13px;
   }
 
 
+  /* GALERÍA */
+
   .gallery{
     grid-template-columns:1fr;
     gap:10px;
   }
-
 
   .item-large,
   .wide-item,
@@ -949,54 +943,59 @@ footer .socials a{
     grid-row:auto;
   }
 
-
   .item-large .art-placeholder,
   .art-placeholder{
     min-height:320px;
   }
 
 
+  /* SOBRE MÍ */
+
   .about-inner{
     grid-template-columns:1fr;
     gap:50px;
   }
-
 
   .portrait-placeholder{
     margin:auto;
   }
 
 
+  /* PÁGINAS SENCILLAS */
+
   .simple-page{
     padding:100px 7vw;
   }
 
-footer{
-  width:88%;
-  padding:30px 0;
 
-  grid-template-columns:1fr;
-  gap:25px;
+  /* FOOTER */
 
-  text-align:center;
+  footer{
+    width:88%;
+    padding:30px 0;
+
+    grid-template-columns:1fr;
+    gap:25px;
+
+    text-align:center;
+  }
+
+  .footer-email{
+    justify-self:center;
+  }
+
+  .socials{
+    justify-self:center;
+    flex-wrap:wrap;
+  }
+
+  .footer-credits{
+    justify-self:center;
+    flex-wrap:wrap;
+    justify-content:center;
+  }
+
 }
-
-.footer-email{
-  justify-self:center;
-}
-
-.socials{
-  justify-self:center;
-  flex-wrap:wrap;
-}
-
-.footer-credits{
-  justify-self:center;
-  flex-wrap:wrap;
-  justify-content:center;
-}
-
-
 /* =========================
    CONTACTO EN MÓVIL
 ========================= */
