@@ -233,26 +233,48 @@ a{
    SOLO EDITORIAL Y CARTELES
 ========================= */
 
-/* Capa blanca */
+.category-editorial::before,
+.category-carteles::before {
+  content: attr(data-title);
 
-.category-editorial::after,
-.category-carteles::after{
-  content:"";
+  position: absolute !important;
+  top: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  left: 0 !important;
 
-  position:absolute;
-  inset:0;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
 
-  background:rgba(255,255,255,.75);
+  box-sizing: border-box !important;
+  padding: 25px !important;
 
-  opacity:0;
+  background: rgba(255, 255, 255, 0.75) !important;
 
-  pointer-events:none;
+  color: #707c28 !important;
 
-  z-index:2;
+  font-family: "DM Sans", Arial, sans-serif !important;
+  font-size: 20px !important;
+  font-weight: 600 !important;
+  line-height: 1.4 !important;
 
-  transition:opacity .25s ease;
+  text-align: center !important;
+  white-space: pre-line !important;
+
+  opacity: 0 !important;
+
+  z-index: 10 !important;
+
+  pointer-events: none !important;
+
+  transition: opacity .25s ease !important;
 }
 
+.category-editorial:hover::before,
+.category-carteles:hover::before {
+  opacity: 1 !important;
+}
 
 /* Título */
 
