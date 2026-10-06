@@ -112,7 +112,7 @@ img {
   height: 100%;
   display: block;
   object-fit: cover;
-  object-position: 50% 50%;
+  object-position: 50% 30%;
 }
 
 .hero-placeholder {
