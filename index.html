@@ -763,191 +763,187 @@ Día Internacional de las Personas con Discapacidad">
        VISOR DE IMÁGENES
   ================================= -->
 
-  <script>
-  document.addEventListener("DOMContentLoaded", function () {
+ <script>
+document.addEventListener("DOMContentLoaded", function () {
 
-    const galleryItems =
-      document.querySelectorAll(".gallery-item");
+  const galleryItems = document.querySelectorAll(".gallery-item");
 
+  /* =================================
+     PREPARAR TÍTULOS Y CLIC
+  ================================= */
 
-    /* =================================
-       CREAR EL TEXTO DEL HOVER
-    ================================= */
+  galleryItems.forEach(function (item) {
 
-    galleryItems.forEach(function (item) {
+    const image = item.querySelector("img");
 
-      const image =
-        item.querySelector("img");
+    if (!image) return;
 
-      if (!image) return;
+    /* Si no tiene data-title, usar el alt */
+    if (!item.hasAttribute("data-title")) {
+      item.setAttribute("data-title", image.alt);
+    }
 
+    /* Abrir imagen */
+    item.addEventListener("click", function (event) {
 
-      /* Si no hay un título personalizado,
-         utiliza el alt */
+      event.preventDefault();
+      event.stopPropagation();
 
-      if (!item.hasAttribute("data-title")) {
-
-        item.setAttribute(
-          "data-title",
-          image.alt
-        );
-
-      }
-
-
-      /* =================================
-         ABRIR IMAGEN
-      ================================= */
-
-      item.addEventListener(
-        "click",
-        function (event) {
-
-          event.preventDefault();
-          event.stopPropagation();
-
-          openImage(image);
-
-        }
-      );
+      openImage(image);
 
     });
 
-
-    /* =================================
-       CREAR VENTANA
-    ================================= */
-
-    const modal =
-      document.createElement("div");
-
-    modal.className =
-      "gallery-modal";
+  });
 
 
-    modal.innerHTML = `
-      <button
-        class="gallery-modal-close"
-        type="button"
-        aria-label="Cerrar">
-        ×
-      </button>
+  /* =================================
+     CREAR VENTANA
+  ================================= */
+
+  const modal = document.createElement("div");
+
+  modal.className = "gallery-modal";
+
+  modal.innerHTML = `
+    <button
+      class="gallery-modal-close"
+      type="button"
+      aria-label="Cerrar">
+      ×
+    </button>
+
+    <div class="gallery-modal-content">
 
       <img
         class="gallery-modal-image"
         src=""
         alt="">
-    `;
+
+      <div class="gallery-modal-title"></div>
+
+    </div>
+  `;
+
+  document.body.appendChild(modal);
 
 
-    document.body.appendChild(modal);
+  const modalImage =
+    modal.querySelector(".gallery-modal-image");
+
+  const modalTitle =
+    modal.querySelector(".gallery-modal-title");
+
+  const closeButton =
+    modal.querySelector(".gallery-modal-close");
 
 
-    const modalImage =
-      modal.querySelector(
-        ".gallery-modal-image"
-      );
+  /* =================================
+     ABRIR IMAGEN
+  ================================= */
 
+  function openImage(image) {
 
-    const closeButton =
-      modal.querySelector(
-        ".gallery-modal-close"
-      );
+    const item = image.closest(".gallery-item");
 
+    const title = item.getAttribute("data-title") || image.alt;
 
-    /* =================================
-       ABRIR
-    ================================= */
+    /* Primero preparar la imagen */
+    modalImage.src = "";
+    modalImage.alt = image.alt;
 
-    function openImage(image) {
+    /* Título */
+    modalTitle.textContent = title;
 
-      modalImage.src =
-        image.src;
+    /*
+      NO abrimos todavía el modal.
+      Esperamos a que la imagen esté cargada.
+    */
 
-      modalImage.alt =
-        image.alt;
+    modalImage.onload = function () {
 
-      modal.classList.add(
-        "is-open"
-      );
+      modal.classList.add("is-open");
 
-      document.body.classList.add(
-        "gallery-modal-open"
-      );
+      document.body.classList.add("gallery-modal-open");
+
+    };
+
+    /*
+      Si la imagen ya estaba en caché,
+      comprobamos inmediatamente.
+    */
+
+    modalImage.src = image.src;
+
+    if (modalImage.complete) {
+
+      modal.classList.add("is-open");
+
+      document.body.classList.add("gallery-modal-open");
 
     }
 
-
-    /* =================================
-       CERRAR
-    ================================= */
-
-    function closeImage() {
-
-      modal.classList.remove(
-        "is-open"
-      );
-
-      document.body.classList.remove(
-        "gallery-modal-open"
-      );
-
-      modalImage.src = "";
-
-    }
+  }
 
 
-    /* =================================
-       BOTÓN CERRAR
-    ================================= */
+  /* =================================
+     CERRAR
+  ================================= */
 
-    closeButton.addEventListener(
-      "click",
-      function (event) {
+  function closeImage() {
 
-        event.preventDefault();
-        event.stopPropagation();
+    modal.classList.remove("is-open");
 
-        closeImage();
+    document.body.classList.remove("gallery-modal-open");
 
-      }
-    );
+    modalImage.src = "";
+
+  }
 
 
-    /* =================================
-       CERRAR HACIENDO CLIC EN EL FONDO
-    ================================= */
+  /* =================================
+     BOTÓN CERRAR
+  ================================= */
 
-    modal.addEventListener(
-      "click",
-      function (event) {
+  closeButton.addEventListener("click", function (event) {
 
-        if (event.target === modal) {
-          closeImage();
-        }
+    event.preventDefault();
 
-      }
-    );
-
-
-    /* =================================
-       CERRAR CON ESC
-    ================================= */
-
-    document.addEventListener(
-      "keydown",
-      function (event) {
-
-        if (event.key === "Escape") {
-          closeImage();
-        }
-
-      }
-    );
+    closeImage();
 
   });
-  </script>
 
+
+  /* =================================
+     CERRAR HACIENDO CLIC EN EL FONDO
+  ================================= */
+
+  modal.addEventListener("click", function (event) {
+
+    if (event.target === modal) {
+
+      closeImage();
+
+    }
+
+  });
+
+
+  /* =================================
+     CERRAR CON ESC
+  ================================= */
+
+  document.addEventListener("keydown", function (event) {
+
+    if (event.key === "Escape") {
+
+      closeImage();
+
+    }
+
+  });
+
+});
+</script>
 
   <!-- ================================
        FORMULARIO DE CONTACTO
