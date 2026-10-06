@@ -762,45 +762,19 @@ Día Internacional de las Personas con Discapacidad">
   <!-- ================================
        VISOR DE IMÁGENES
   ================================= -->
-
- <script>
+<script>
 document.addEventListener("DOMContentLoaded", function () {
 
-  const galleryItems = document.querySelectorAll(".gallery-item");
-
-  /* =================================
-     PREPARAR TÍTULOS Y CLIC
-  ================================= */
-
-  galleryItems.forEach(function (item) {
-
-    const image = item.querySelector("img");
-
-    if (!image) return;
-
-    /* Si no tiene data-title, usar el alt */
-    if (!item.hasAttribute("data-title")) {
-      item.setAttribute("data-title", image.alt);
-    }
-
-    /* Abrir imagen */
-    item.addEventListener("click", function (event) {
-
-      event.preventDefault();
-      event.stopPropagation();
-
-      openImage(image);
-
-    });
-
-  });
+  const galleryItems =
+    document.querySelectorAll(".gallery-item");
 
 
   /* =================================
-     CREAR VENTANA
+     CREAR VENTANA DE IMAGEN
   ================================= */
 
-  const modal = document.createElement("div");
+  const modal =
+    document.createElement("div");
 
   modal.className = "gallery-modal";
 
@@ -819,8 +793,6 @@ document.addEventListener("DOMContentLoaded", function () {
         src=""
         alt="">
 
-      <div class="gallery-modal-title"></div>
-
     </div>
   `;
 
@@ -830,11 +802,53 @@ document.addEventListener("DOMContentLoaded", function () {
   const modalImage =
     modal.querySelector(".gallery-modal-image");
 
-  const modalTitle =
-    modal.querySelector(".gallery-modal-title");
-
   const closeButton =
     modal.querySelector(".gallery-modal-close");
+
+
+  /* =================================
+     PREPARAR TÍTULOS DEL HOVER
+  ================================= */
+
+  galleryItems.forEach(function (item) {
+
+    const image =
+      item.querySelector("img");
+
+    if (!image) return;
+
+    /*
+      Si no tiene data-title,
+      utiliza el alt de la imagen.
+    */
+
+    if (!item.hasAttribute("data-title")) {
+
+      item.setAttribute(
+        "data-title",
+        image.alt
+      );
+
+    }
+
+
+    /* =================================
+       ABRIR IMAGEN
+    ================================= */
+
+    item.addEventListener(
+      "click",
+      function (event) {
+
+        event.preventDefault();
+        event.stopPropagation();
+
+        openImage(image);
+
+      }
+    );
+
+  });
 
 
   /* =================================
@@ -843,44 +857,33 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function openImage(image) {
 
-    const item = image.closest(".gallery-item");
-
-    const title = item.getAttribute("data-title") || image.alt;
-
-    /* Primero preparar la imagen */
-    modalImage.src = "";
-    modalImage.alt = image.alt;
-
-    /* Título */
-    modalTitle.textContent = title;
-
     /*
-      NO abrimos todavía el modal.
-      Esperamos a que la imagen esté cargada.
+      Primero cargamos la imagen en memoria.
+      El modal NO se muestra hasta que
+      la imagen está preparada.
+
+      Esto evita que aparezca primero
+      el fondo blanco y después la imagen.
     */
 
-    modalImage.onload = function () {
+    const preload =
+      new Image();
+
+    preload.onload = function () {
+
+      modalImage.src = image.src;
+
+      modalImage.alt = image.alt;
 
       modal.classList.add("is-open");
 
-      document.body.classList.add("gallery-modal-open");
+      document.body.classList.add(
+        "gallery-modal-open"
+      );
 
     };
 
-    /*
-      Si la imagen ya estaba en caché,
-      comprobamos inmediatamente.
-    */
-
-    modalImage.src = image.src;
-
-    if (modalImage.complete) {
-
-      modal.classList.add("is-open");
-
-      document.body.classList.add("gallery-modal-open");
-
-    }
+    preload.src = image.src;
 
   }
 
@@ -893,7 +896,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     modal.classList.remove("is-open");
 
-    document.body.classList.remove("gallery-modal-open");
+    document.body.classList.remove(
+      "gallery-modal-open"
+    );
 
     modalImage.src = "";
 
@@ -904,43 +909,52 @@ document.addEventListener("DOMContentLoaded", function () {
      BOTÓN CERRAR
   ================================= */
 
-  closeButton.addEventListener("click", function (event) {
+  closeButton.addEventListener(
+    "click",
+    function (event) {
 
-    event.preventDefault();
+      event.preventDefault();
 
-    closeImage();
+      closeImage();
 
-  });
+    }
+  );
 
 
   /* =================================
      CERRAR HACIENDO CLIC EN EL FONDO
   ================================= */
 
-  modal.addEventListener("click", function (event) {
+  modal.addEventListener(
+    "click",
+    function (event) {
 
-    if (event.target === modal) {
+      if (event.target === modal) {
 
-      closeImage();
+        closeImage();
+
+      }
 
     }
-
-  });
+  );
 
 
   /* =================================
      CERRAR CON ESC
   ================================= */
 
-  document.addEventListener("keydown", function (event) {
+  document.addEventListener(
+    "keydown",
+    function (event) {
 
-    if (event.key === "Escape") {
+      if (event.key === "Escape") {
 
-      closeImage();
+        closeImage();
+
+      }
 
     }
-
-  });
+  );
 
 });
 </script>
